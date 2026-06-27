@@ -35,7 +35,7 @@ export default function AboutPreview() {
         <ScrollReveal>
           <div className="relative mx-4">
             {/* REPLACE: Replace with <Image> of the doctor or clinic interior */}
-            <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light to-rose-mid relative flex items-center justify-center">
+            <div className="w-full h-[360px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light to-rose-mid relative flex items-center justify-center">
               <div className="text-center px-8 text-rose-primary/40">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="mx-auto mb-2">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
