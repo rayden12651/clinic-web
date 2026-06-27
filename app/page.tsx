@@ -10,7 +10,6 @@ import AppointmentCTA from "@/components/home/AppointmentCTA";
 import Testimonials from "@/components/home/Testimonials";
 import FAQPreview from "@/components/home/FAQPreview";
 import ContactPreview from "@/components/home/ContactPreview";
-import MobileBookingBar from "@/components/home/MobileBookingBar";
 
 export const metadata: Metadata = {
   title: "Dr. Pazit Clinic | Premium Medical Care With a Personal Touch",
@@ -23,8 +22,7 @@ export default function HomePage() {
     <>
       <CursorGlow />
       <Header />
-      {/* pb-20 md:pb-0 = extra bottom space on mobile for the sticky booking bar */}
-      <main className="pb-20 md:pb-0">
+      <main>
         <Hero />
         <div className="mobile-section-divider" />
         <AboutPreview />
@@ -40,7 +38,6 @@ export default function HomePage() {
         <ContactPreview />
       </main>
       <Footer />
-      <MobileBookingBar />
     </>
   );
 }
