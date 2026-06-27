@@ -65,20 +65,16 @@ export default function AboutPreview() {
               <em className="not-italic text-rose-primary">Elegance</em>
             </h2>
             <p className="text-[13px] text-clinic-muted leading-relaxed mb-5">
-              Dr. Pazit Clinic was founded on a simple belief: exceptional medical care should feel as
-              beautiful as it looks. Led by Dr. Pazit Khalil, every detail is considered and every
-              treatment is designed with you in mind.
+              Led by Dr. Pazit Khalil — clinical precision meets genuine personal care.
             </p>
 
-            {/* Mini values list */}
-            <div className="flex flex-col gap-3 pt-4 border-t border-rose-blush mb-5">
-              {values.map((v, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-7 h-7 rounded-full bg-rose-blush flex items-center justify-center text-rose-primary shrink-0">
-                    {v.icon}
-                  </div>
-                  <p className="text-[12px] font-semibold text-clinic-dark">{v.title}</p>
-                </div>
+            {/* Trust chips */}
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-rose-blush mb-5">
+              {["Private Care", "Advanced Clinic", "Personal Approach"].map((chip) => (
+                <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-blush border border-rose-light/70 text-[11px] font-medium text-rose-primary tracking-wide">
+                  <span className="w-1 h-1 rounded-full bg-rose-primary" />
+                  {chip}
+                </span>
               ))}
             </div>
 

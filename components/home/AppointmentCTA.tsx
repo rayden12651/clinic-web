@@ -48,10 +48,10 @@ export default function AppointmentCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, delay: 0.18 }}
-          className="mt-5 text-base text-white/70 leading-relaxed max-w-xl mx-auto"
+          className="mt-4 lg:mt-5 text-[13px] lg:text-base text-white/70 leading-relaxed max-w-xl mx-auto"
         >
-          Book a confidential consultation today. Our team will guide you
-          through the process with care, transparency, and no pressure.
+          <span className="lg:hidden">Confidential. No pressure. Confirmed within 24 hours.</span>
+          <span className="hidden lg:inline">Book a confidential consultation today. Our team will guide you through the process with care, transparency, and no pressure.</span>
         </motion.p>
 
         <motion.div
@@ -59,23 +59,23 @@ export default function AppointmentCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, delay: 0.28 }}
-          className="mt-6 lg:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-5 lg:mt-10 grid grid-cols-1 gap-3 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-4"
         >
           <Link
             href="/appointment"
-            className="group inline-flex items-center gap-2.5 px-8 py-4 bg-white text-rose-deep text-sm font-medium tracking-wider uppercase rounded-full hover:bg-rose-blush transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
+            className="group inline-flex items-center justify-center gap-2 w-full lg:w-auto px-8 py-3.5 lg:py-4 bg-white text-rose-deep text-[12px] lg:text-sm font-medium tracking-wider uppercase rounded-full hover:bg-rose-blush transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
           >
             Book Appointment
-            <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-4 border border-white/30 text-white text-sm font-medium tracking-wider uppercase rounded-full hover:bg-white/10 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 w-full lg:w-auto px-8 py-3.5 lg:py-4 border border-white/30 text-white text-[12px] lg:text-sm font-medium tracking-wider uppercase rounded-full hover:bg-white/10 transition-all duration-300"
           >
-            <MessageCircle size={15} />
+            <MessageCircle size={14} />
             WhatsApp Us
           </a>
         </motion.div>

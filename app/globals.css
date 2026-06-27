@@ -93,3 +93,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 1px;
   background: linear-gradient(to right, transparent, #C9A96E, transparent);
 }
+
+/* ─── Mobile section separator (pink gradient line) ─── */
+@media (max-width: 1023px) {
+  .mobile-section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #E9A8B8 30%, #E9A8B8 70%, transparent);
+    margin: 0;
+  }
+}

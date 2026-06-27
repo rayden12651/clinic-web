@@ -78,16 +78,17 @@ export default function Hero() {
                 With a Personal Touch
               </motion.h1>
 
-              {/* Subtitle */}
+              {/* Subtitle — short on mobile, full on desktop */}
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.32 }}
-                className="mt-3 sm:mt-4 lg:mt-6 text-[14px] sm:text-[15px] lg:text-base leading-[1.65] text-clinic-muted max-w-md"
+                className="mt-3 sm:mt-4 lg:mt-6 text-[13px] sm:text-[15px] lg:text-base leading-[1.65] text-clinic-muted max-w-md"
               >
-                Where advanced aesthetic care meets the art of living well.
+                <span className="lg:hidden">Tailored aesthetic care, designed around you.</span>
+                <span className="hidden lg:inline">Where advanced aesthetic care meets the art of living well.
                 Every treatment is thoughtfully tailored to your health,
-                confidence, and natural beauty.
+                confidence, and natural beauty.</span>
               </motion.p>
 
               {/* CTAs */}
@@ -132,7 +133,7 @@ export default function Hero() {
             >
               {/* Mobile image — with editorial stat badges */}
               {/* REPLACE: swap this div for <Image src="/your-photo.jpg" ... /> */}
-              <div className="lg:hidden h-[360px] sm:h-[420px] w-[88vw] max-w-[380px] rounded-[1.75rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25 flex flex-col items-center justify-center gap-3 relative">
+              <div className="lg:hidden h-[290px] sm:h-[360px] w-[86vw] max-w-[340px] rounded-[1.75rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25 flex flex-col items-center justify-center gap-3 relative">
                 <div className="text-rose-primary/35">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>

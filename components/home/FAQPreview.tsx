@@ -34,6 +34,7 @@ export default function FAQPreview() {
           eyebrow="Questions Answered"
           title="Frequently Asked Questions"
           subtitle="We believe informed patients make empowered decisions. Here are some of the questions we hear most often."
+          hideSubtitleMobile
         />
 
         <div className="mt-8 lg:mt-14">
@@ -44,13 +45,13 @@ export default function FAQPreview() {
         </div>
 
         <ScrollReveal delay={0.3}>
-          <div className="mt-10 text-center">
-            <p className="text-sm text-clinic-muted mb-4">
+          <div className="mt-8 lg:mt-10 text-center">
+            <p className="hidden lg:block text-sm text-clinic-muted mb-4">
               Still have questions? We are always happy to help.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-clinic-border text-clinic-body text-sm font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300"
+              className="inline-flex items-center gap-2 px-7 py-3 lg:px-8 lg:py-3.5 border border-clinic-border text-clinic-body text-[12px] lg:text-sm font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300"
             >
               Contact Us
             </Link>

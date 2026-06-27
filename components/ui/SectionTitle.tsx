@@ -8,6 +8,7 @@ interface SectionTitleProps {
   subtitle?: string;
   align?: "left" | "center";
   light?: boolean;
+  hideSubtitleMobile?: boolean;
 }
 
 export default function SectionTitle({
@@ -16,6 +17,7 @@ export default function SectionTitle({
   subtitle,
   align = "center",
   light = false,
+  hideSubtitleMobile = false,
 }: SectionTitleProps) {
   const centered = align === "center";
 
@@ -55,7 +57,7 @@ export default function SectionTitle({
           transition={{ duration: 0.65, delay: 0.15 }}
           className={`mt-3 sm:mt-5 leading-relaxed text-sm sm:text-base lg:text-lg ${
             light ? "text-white/70" : "text-clinic-muted"
-          }`}
+          } ${hideSubtitleMobile ? "hidden lg:block" : ""}`}
         >
           {subtitle}
         </motion.p>

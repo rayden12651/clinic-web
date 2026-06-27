@@ -56,6 +56,7 @@ export default function Testimonials() {
           eyebrow="Patient Reviews"
           title="Trusted by Those Who Matter Most"
           subtitle="Our patients' experiences are the true measure of everything we do."
+          hideSubtitleMobile
         />
 
         {/* Mobile: horizontal scroll carousel */}
@@ -88,9 +89,9 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Trust note */}
+        {/* Trust note — desktop only */}
         <ScrollReveal delay={0.3}>
-          <p className="mt-12 text-center text-xs text-clinic-muted/60 tracking-wide">
+          <p className="hidden lg:block mt-12 text-center text-xs text-clinic-muted/60 tracking-wide">
             All reviews are from real patients. Names are anonymised to protect privacy.
           </p>
         </ScrollReveal>
