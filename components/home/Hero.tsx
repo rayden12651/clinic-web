@@ -33,7 +33,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-rose-blush via-white to-gold-pale lg:min-h-screen lg:flex lg:flex-col">
-      {/* Background blobs */}
+
+      {/* Background blobs — shared */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
           style={{ x: floatXSlow, y: floatYSlow }}
@@ -45,32 +46,133 @@ export default function Hero() {
         />
       </div>
 
-      {/* Content — no min-h-screen on mobile, tight padding */}
-      <div className="relative z-10 lg:flex-1 lg:flex lg:items-center">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-[76px] pb-8 sm:pt-[88px] sm:pb-10 lg:pt-28 lg:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+      {/* ══════════════════════════════════════════════════════════
+          MOBILE HERO — editorial luxury layout (lg:hidden)
+          Layout: short text → full image → subtitle + buttons
+      ══════════════════════════════════════════════════════════ */}
+      <div className="lg:hidden relative z-10">
 
-            {/* ── Left: Text ── */}
+        {/* Short eyebrow + compact serif headline */}
+        <div className="pt-[68px] pb-4 px-5">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center gap-2 mb-4"
+          >
+            <div className="h-px w-5 bg-rose-primary" />
+            <span className="text-[10px] font-semibold tracking-[0.28em] uppercase text-rose-primary">
+              Luxury Medical Care
+            </span>
+          </motion.div>
+
+          {/* Short mobile headline — keeps hero compact and elegant */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-serif font-light text-[40px] leading-[0.93] tracking-[-0.025em] text-clinic-dark"
+          >
+            Premium{" "}
+            <em className="not-italic text-rose-primary">Care,</em>
+            <br />Personal Touch
+          </motion.h1>
+        </div>
+
+        {/* Hero image — full width, close to title, forms the visual centrepiece */}
+        {/* REPLACE: swap inner div for <Image src="/images/hero.jpg" fill alt="Dr. Pazit Clinic" className="object-cover" /> */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.26 }}
+          className="px-4"
+        >
+          <div className="relative w-full h-[340px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25">
+            {/* Placeholder centre — remove when real image added */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-rose-primary/35">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+              <p className="text-[9px] tracking-widest uppercase text-center px-8">Replace with clinic photo</p>
+            </div>
+            {/* Subtle bottom gradient for badge readability */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-rose-primary/18 to-transparent pointer-events-none" />
+            {/* Inset border — luxury editorial feel */}
+            <div className="absolute inset-2 rounded-[1.65rem] border border-white/22 pointer-events-none" />
+            {/* Single floating trust badge */}
+            <div className="absolute bottom-4 left-4 bg-white/93 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 border border-white/70 shadow-lg shadow-rose-primary/8">
+              <p className="font-serif text-xl text-rose-primary font-medium leading-none">500+</p>
+              <p className="text-[9px] text-clinic-muted mt-0.5 uppercase tracking-wide">Happy Patients</p>
+            </div>
+            {/* Satisfaction accent — top right */}
+            <div className="absolute top-4 right-4 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2 border border-white/60 shadow-md flex items-center gap-1.5">
+              <span className="text-[#C9A96E] text-sm leading-none">★</span>
+              <div>
+                <p className="font-serif text-[15px] text-rose-primary font-medium leading-none">98%</p>
+                <p className="text-[8px] text-clinic-muted mt-0.5 uppercase tracking-wide">Rated</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Subtitle + compact buttons — below image */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="px-5 pt-5 pb-6"
+        >
+          <p className="text-[13px] text-clinic-muted leading-[1.65] mb-4">
+            Tailored aesthetic care, designed around you.
+          </p>
+          <div className="flex items-center gap-2.5 mb-3">
+            <Link
+              href="/appointment"
+              className="group inline-flex items-center gap-1.5 px-5 py-2.5 bg-rose-primary text-white text-[11px] font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25 whitespace-nowrap"
+            >
+              Book Now
+              <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center px-5 py-2.5 border border-clinic-border text-clinic-body text-[11px] font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300 whitespace-nowrap"
+            >
+              Services
+            </Link>
+          </div>
+          <p className="text-[10px] text-clinic-muted/50 tracking-wide">
+            ✦&nbsp; Consultation-based &nbsp;·&nbsp; Strictly confidential
+          </p>
+        </motion.div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          DESKTOP HERO — original layout (hidden on mobile)
+      ══════════════════════════════════════════════════════════ */}
+      <div className="hidden lg:flex lg:flex-1 lg:items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full lg:pt-28 lg:pb-16">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+            {/* Left: Text */}
             <div>
-              {/* Eyebrow */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex items-center gap-2 mb-3 lg:mb-5"
+                className="flex items-center gap-2 mb-5"
               >
-                <div className="h-px w-6 lg:w-10 bg-rose-primary" />
+                <div className="h-px w-10 bg-rose-primary" />
                 <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-primary">
                   Luxury Medical Care
                 </span>
               </motion.div>
 
-              {/* Title — 42px mobile → 76px desktop */}
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="font-serif font-light text-[42px] sm:text-[52px] md:text-[64px] lg:text-[72px] xl:text-[80px] leading-[0.95] tracking-[-0.02em] text-clinic-dark"
+                className="font-serif font-light text-[64px] lg:text-[72px] xl:text-[80px] leading-[0.95] tracking-[-0.02em] text-clinic-dark"
               >
                 Premium Medical{" "}
                 <em className="not-italic text-rose-primary">Care</em>
@@ -78,91 +180,58 @@ export default function Hero() {
                 With a Personal Touch
               </motion.h1>
 
-              {/* Subtitle — short on mobile, full on desktop */}
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.32 }}
-                className="mt-3 sm:mt-4 lg:mt-6 text-[13px] sm:text-[15px] lg:text-base leading-[1.65] text-clinic-muted max-w-md"
+                className="mt-6 text-base leading-[1.65] text-clinic-muted max-w-md"
               >
-                <span className="lg:hidden">Tailored aesthetic care, designed around you.</span>
-                <span className="hidden lg:inline">Where advanced aesthetic care meets the art of living well.
+                Where advanced aesthetic care meets the art of living well.
                 Every treatment is thoughtfully tailored to your health,
-                confidence, and natural beauty.</span>
+                confidence, and natural beauty.
               </motion.p>
 
-              {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.44 }}
-                className="mt-4 lg:mt-8 flex flex-row items-center gap-2 sm:gap-3"
+                className="mt-8 flex flex-row items-center gap-3"
               >
                 <Link
                   href="/appointment"
-                  className="group inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-7 sm:py-3.5 bg-rose-primary text-white text-[11px] sm:text-[13px] font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25 hover:-translate-y-0.5 whitespace-nowrap"
+                  className="group inline-flex items-center gap-1.5 px-7 py-3.5 bg-rose-primary text-white text-[13px] font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25 hover:-translate-y-0.5 whitespace-nowrap"
                 >
                   Book Now
-                  <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                  <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center px-4 py-2.5 sm:px-7 sm:py-3.5 border border-clinic-border text-clinic-body text-[11px] sm:text-[13px] font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300 whitespace-nowrap"
+                  className="inline-flex items-center px-7 py-3.5 border border-clinic-border text-clinic-body text-[13px] font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300 whitespace-nowrap"
                 >
                   Our Services
                 </Link>
               </motion.div>
 
-              {/* Trust line */}
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
-                className="mt-3 lg:mt-6 text-[10px] text-clinic-muted/60 tracking-wide"
+                className="mt-6 text-[10px] text-clinic-muted/60 tracking-wide"
               >
                 ✦&nbsp; Consultation-based &nbsp;·&nbsp; Strictly confidential
               </motion.p>
             </div>
 
-            {/* ── Right: Image ── */}
+            {/* Right: Desktop image with mouse parallax + floating badges */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.25 }}
-              className="flex justify-center lg:justify-start mt-5 lg:mt-0"
+              className="flex justify-start"
             >
-              {/* Mobile image — with editorial stat badges */}
-              {/* REPLACE: swap this div for <Image src="/your-photo.jpg" ... /> */}
-              <div className="lg:hidden h-[290px] sm:h-[360px] w-[86vw] max-w-[340px] rounded-[1.75rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25 flex flex-col items-center justify-center gap-3 relative">
-                <div className="text-rose-primary/35">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                    <circle cx="12" cy="13" r="4"/>
-                  </svg>
-                </div>
-                <p className="text-rose-primary/45 text-[9px] tracking-widest uppercase text-center px-6">
-                  Replace with clinic photo
-                </p>
-                <div className="absolute inset-2 rounded-[1.4rem] border border-white/30 pointer-events-none" />
-                {/* Stat badge — bottom left */}
-                <div className="absolute bottom-4 left-4 bg-white/92 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 border border-white/70 shadow-lg">
-                  <p className="font-serif text-lg text-rose-primary font-medium leading-none">500+</p>
-                  <p className="text-[9px] text-clinic-muted mt-0.5 uppercase tracking-wide">Patients</p>
-                </div>
-                {/* Satisfaction badge — bottom right */}
-                <div className="absolute bottom-4 right-4 bg-white/92 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 border border-white/70 shadow-lg flex items-center gap-1.5">
-                  <span className="text-[#C9A96E] text-base leading-none">★</span>
-                  <div>
-                    <p className="font-serif text-lg text-rose-primary font-medium leading-none">98%</p>
-                    <p className="text-[9px] text-clinic-muted mt-0.5 uppercase tracking-wide">Rated</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Desktop image — with parallax + floating badges */}
               <motion.div
                 style={{ x: floatX, y: floatY }}
-                className="hidden lg:flex items-center justify-center relative"
+                className="flex items-center justify-center relative"
               >
                 {/* REPLACE: swap this div for <Image src="/your-photo.jpg" ... /> */}
                 <div className="relative w-[460px] h-[580px] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-rose-primary/15 bg-gradient-to-br from-rose-light via-rose-mid/50 to-rose-primary/25 flex flex-col items-center justify-center gap-4">
@@ -212,12 +281,12 @@ export default function Hero() {
                 <div className="absolute -right-5 -top-5 w-20 h-20 rounded-full border border-rose-mid/20" />
               </motion.div>
             </motion.div>
-          </div>
 
+          </div>
         </div>
       </div>
 
-      {/* Stats bar */}
+      {/* Stats bar — shown on both mobile and desktop */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
