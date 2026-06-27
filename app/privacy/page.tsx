@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 /* ── REPLACE: Update clinic name, email, and effective date ── */
 const CLINIC_NAME = "Dr. Pazit Clinic";
-const CONTACT_EMAIL = "hello@dramaraclinic.com";
+const CONTACT_EMAIL = "hello@drpazitclinic.com";
 const EFFECTIVE_DATE = "1 January 2025";
 
 export default function PrivacyPage() {
   return (
     <>
       <Header />
-      <main className="pt-36 pb-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <main className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <ScrollReveal>
             <p className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-primary mb-4">
               Legal
             </p>
-            <h1 className="font-serif font-light text-5xl text-clinic-dark mb-3">
+            <h1 className="font-serif font-light text-[2rem] sm:text-4xl lg:text-5xl text-clinic-dark mb-3">
               Privacy Policy
             </h1>
             <p className="text-clinic-muted text-sm">

@@ -38,8 +38,8 @@ const contactDetails = [
   {
     icon: <Mail size={18} />,
     label: "Email",
-    value: "hello@dramaraclinic.com",
-    href: "mailto:hello@dramaraclinic.com",
+    value: "hello@drpazitclinic.com",
+    href: "mailto:hello@drpazitclinic.com",
     desc: "We reply within 24 hours",
   },
   {
@@ -65,17 +65,17 @@ export default function ContactPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="pt-36 pb-16 bg-gradient-to-b from-rose-blush to-white">
-          <div className="max-w-3xl mx-auto px-6 text-center">
+        <section className="pt-28 lg:pt-36 pb-10 lg:pb-16 bg-gradient-to-b from-rose-blush via-rose-blush/40 to-white">
+          <div className="max-w-3xl mx-auto px-5 lg:px-6 text-center">
             <ScrollReveal>
-              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-primary mb-4">
+              <p className="text-[10px] lg:text-xs font-semibold tracking-[0.3em] uppercase text-rose-primary mb-3 lg:mb-4">
                 Get in Touch
               </p>
-              <h1 className="font-serif font-light text-5xl md:text-6xl text-clinic-dark leading-tight">
+              <h1 className="font-serif font-light text-[2.25rem] sm:text-5xl lg:text-6xl text-clinic-dark leading-tight">
                 We Would Love to{" "}
                 <em className="not-italic text-rose-primary">Hear from You</em>
               </h1>
-              <p className="mt-5 text-clinic-muted text-lg leading-relaxed">
+              <p className="mt-3 lg:mt-5 text-[13px] lg:text-base text-clinic-muted leading-relaxed max-w-md mx-auto">
                 Whether you have a question or are ready to book — we are here.
               </p>
             </ScrollReveal>
@@ -83,29 +83,29 @@ export default function ContactPage() {
         </section>
 
         {/* Contact cards */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <section className="py-10 lg:py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-5 lg:px-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5">
               {contactDetails.map((item, i) => (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="bg-clinic-bg border border-clinic-border rounded-2xl p-6 hover:border-rose-mid hover:shadow-lg hover:shadow-rose-primary/6 transition-all duration-300">
-                    <div className="w-10 h-10 rounded-xl bg-rose-blush flex items-center justify-center text-rose-primary mb-5">
+                  <div className="bg-clinic-bg border border-clinic-border rounded-2xl p-4 lg:p-6 hover:border-rose-mid hover:shadow-lg hover:shadow-rose-primary/6 transition-all duration-300 h-full">
+                    <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-xl bg-rose-blush flex items-center justify-center text-rose-primary mb-3 lg:mb-5">
                       {item.icon}
                     </div>
-                    <p className="text-xs font-semibold tracking-widest uppercase text-clinic-muted mb-2">
+                    <p className="text-[9px] lg:text-xs font-semibold tracking-widest uppercase text-clinic-muted mb-1 lg:mb-2">
                       {item.label}
                     </p>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="block text-sm font-medium text-clinic-dark hover:text-rose-primary transition-colors mb-1"
+                        className="block text-[12px] lg:text-sm font-medium text-clinic-dark hover:text-rose-primary transition-colors mb-0.5 lg:mb-1 leading-snug"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium text-clinic-dark mb-1">{item.value}</p>
+                      <p className="text-[12px] lg:text-sm font-medium text-clinic-dark mb-0.5 lg:mb-1 leading-snug">{item.value}</p>
                     )}
-                    <p className="text-xs text-clinic-muted">{item.desc}</p>
+                    <p className="text-[10px] lg:text-xs text-clinic-muted leading-snug">{item.desc}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -114,14 +114,14 @@ export default function ContactPage() {
         </section>
 
         {/* Form + info */}
-        <section className="py-20 bg-rose-blush">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="py-10 lg:py-20 bg-rose-blush">
+          <div className="max-w-7xl mx-auto px-5 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact form */}
               <ScrollReveal direction="left">
-                <div className="bg-white border border-clinic-border rounded-2xl p-8 md:p-10">
-                  <h2 className="font-serif text-2xl text-clinic-dark mb-2">Send a Message</h2>
-                  <p className="text-sm text-clinic-muted mb-8">
+                <div className="bg-white border border-clinic-border rounded-2xl p-5 md:p-10">
+                  <h2 className="font-serif text-xl lg:text-2xl text-clinic-dark mb-1 lg:mb-2">Send a Message</h2>
+                  <p className="text-[13px] lg:text-sm text-clinic-muted mb-6 lg:mb-8">
                     We reply to all enquiries within 24 hours.
                   </p>
                   <ContactForm />
@@ -165,7 +165,7 @@ export default function ContactPage() {
                         className="flex items-center gap-3 text-sm text-clinic-muted hover:text-rose-primary transition-colors"
                       >
                         <InstagramIcon />
-                        @dramaraclinic
+                        @drpazitclinic
                       </a>
                       <a
                         href="#"

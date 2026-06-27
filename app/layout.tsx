@@ -5,7 +5,7 @@ import "./globals.css";
 /* ── REPLACE: Update clinic name, description, and URL below ── */
 const CLINIC_NAME = "Dr. Pazit Clinic";
 const CLINIC_TAGLINE = "Premium Medical Care With a Personal Touch";
-const CLINIC_URL = "https://www.dramaraclinic.com"; // Replace with your actual URL
+const CLINIC_URL = "https://www.drpazitclinic.com"; // Replace with your actual URL
 
 const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],

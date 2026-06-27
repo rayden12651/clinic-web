@@ -26,7 +26,7 @@ const CLINIC_NAME = "Dr. Pazit Clinic";
 const CLINIC_DESC =
   "A sanctuary of advanced aesthetic and wellness care, where precision meets elegance.";
 const CLINIC_PHONE = "+972 50 000 0000"; // Replace with real phone
-const CLINIC_EMAIL = "hello@dramaraclinic.com"; // Replace with real email
+const CLINIC_EMAIL = "hello@drpazitclinic.com"; // Replace with real email
 const CLINIC_ADDRESS = "Dubai Healthcare City, Dubai, UAE"; // Replace with real address
 const WHATSAPP_URL =
   "https://wa.me/972500000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment";
