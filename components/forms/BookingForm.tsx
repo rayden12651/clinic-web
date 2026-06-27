@@ -103,11 +103,11 @@ export default function BookingForm() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-clinic-border bg-white text-clinic-dark placeholder:text-clinic-muted/60 text-sm focus:outline-none focus:ring-2 focus:ring-rose-primary/20 focus:border-rose-primary transition-all duration-300";
-  const labelClass = "block text-xs font-semibold tracking-wider uppercase text-clinic-muted mb-2";
+    "w-full px-4 py-2.5 lg:py-3 rounded-xl border border-clinic-border bg-white text-clinic-dark placeholder:text-clinic-muted/50 text-[13px] lg:text-sm focus:outline-none focus:ring-2 focus:ring-rose-primary/20 focus:border-rose-primary transition-all duration-300";
+  const labelClass = "block text-[10px] lg:text-xs font-semibold tracking-wider uppercase text-clinic-muted mb-1.5 lg:mb-2";
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
       {/* Full Name */}
       <div className="md:col-span-2">
         <label className={labelClass}>Full Name *</label>
