@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Brand Rose Palette ─── */
+  --color-rose-blush:   #FBF4F1;
+  --color-rose-light:   #F5E0D8;
+  --color-rose-mid:     #E8BDB4;
+  --color-rose-primary: #C4847A;
+  --color-rose-deep:    #9E6059;
+  --color-rose-dark:    #7A4540;
+
+  /* ─── Gold / Champagne ─── */
+  --color-gold-pale:  #F5EDD8;
+  --color-gold-light: #E8D4A0;
+  --color-gold:       #C9A96E;
+  --color-gold-dark:  #A88748;
+
+  /* ─── Clinic Neutrals ─── */
+  --color-clinic-bg:     #FEFCFB;
+  --color-clinic-dark:   #1A1412;
+  --color-clinic-body:   #4A3F3D;
+  --color-clinic-muted:  #8A7E7C;
+  --color-clinic-border: #EDE4E0;
+  --color-clinic-card:   #FDFAF8;
+
+  /* ─── Typography ─── */
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* ─── Custom Animations ─── */
+  --animate-float:          float 4s ease-in-out infinite;
+  --animate-float-delayed:  float 4s ease-in-out 2s infinite;
+  --animate-pulse-soft:     pulseSoft 3s ease-in-out infinite;
+}
+
+/* ─── Keyframes ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ─── Base Reset & Globals ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-clinic-bg);
+  color: var(--color-clinic-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-clinic-dark);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-rose-blush); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-rose-mid);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-rose-primary); }
+
+/* ─── Gold shimmer utility ─── */
+.gold-text {
+  background: linear-gradient(135deg, #C9A96E 0%, #E8D4A0 50%, #C9A96E 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Luxury divider ─── */
+.divider-gold {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #C9A96E, transparent);
+}
