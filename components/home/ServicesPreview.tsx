@@ -67,33 +67,44 @@ export default function ServicesPreview() {
           {services.map((svc, i) => (
             <div
               key={i}
-              className="snap-start shrink-0 w-[78%] min-w-[240px] bg-white rounded-[1.5rem] border border-rose-light/50 p-5 flex flex-col shadow-sm shadow-rose-primary/5"
+              className="snap-start shrink-0 w-[78%] min-w-[240px] bg-white rounded-[1.5rem] border border-rose-light/50 overflow-hidden shadow-sm shadow-rose-primary/5 flex flex-col"
             >
-              {/* Number + icon row */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-rose-primary/50">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="w-9 h-9 rounded-full bg-rose-blush flex items-center justify-center text-rose-primary">
-                  {svc.icon}
-                </div>
+              {/* Image placeholder — Replace with: <Image src="/images/service-X.jpg" fill alt={svc.title} className="object-cover" /> */}
+              <div className="w-full h-[96px] bg-gradient-to-br from-rose-blush via-rose-light/40 to-white flex flex-col items-center justify-center gap-1 shrink-0 border-b border-rose-light/40">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="text-rose-primary/30">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                  <circle cx="12" cy="13" r="4"/>
+                </svg>
+                <p className="text-[7px] text-rose-primary/30 tracking-widest uppercase text-center leading-tight px-4">{svc.title}</p>
               </div>
-              {/* Title */}
-              <h3 className="font-serif text-[1.1rem] text-clinic-dark leading-tight mb-2">
-                {svc.title}
-              </h3>
-              {/* Short desc */}
-              <p className="text-[12px] text-clinic-muted leading-relaxed flex-1">
-                {svc.mobileDesc}
-              </p>
-              {/* Link */}
-              <Link
-                href="/services"
-                className="mt-4 pt-3 border-t border-rose-blush flex items-center justify-between text-[11px] font-semibold text-rose-primary uppercase tracking-wider"
-              >
-                Learn More
-                <ArrowRight size={12} />
-              </Link>
+              {/* Card content */}
+              <div className="p-5 flex flex-col flex-1">
+                {/* Number + icon row */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-rose-primary/50">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="w-9 h-9 rounded-full bg-rose-blush flex items-center justify-center text-rose-primary">
+                    {svc.icon}
+                  </div>
+                </div>
+                {/* Title */}
+                <h3 className="font-serif text-[1.05rem] text-clinic-dark leading-tight mb-2">
+                  {svc.title}
+                </h3>
+                {/* Short desc */}
+                <p className="text-[12px] text-clinic-muted leading-relaxed flex-1">
+                  {svc.mobileDesc}
+                </p>
+                {/* Link */}
+                <Link
+                  href="/services"
+                  className="mt-4 pt-3 border-t border-rose-blush flex items-center justify-between text-[11px] font-semibold text-rose-primary uppercase tracking-wider"
+                >
+                  Learn More
+                  <ArrowRight size={12} />
+                </Link>
+              </div>
             </div>
           ))}
           {/* Trailing spacer */}

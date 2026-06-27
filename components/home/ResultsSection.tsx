@@ -48,29 +48,48 @@ export default function ResultsSection() {
           hideSubtitleMobile
         />
 
-        {/* ── MOBILE: premium 2×2 stats grid ── */}
-        <div className="lg:hidden mt-8 grid grid-cols-2 gap-3">
-          {mobileStats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`rounded-[1.25rem] p-5 flex flex-col gap-1 border ${
-                stat.accent
-                  ? "bg-gradient-to-br from-rose-primary to-rose-deep border-rose-deep text-white"
-                  : "bg-gradient-to-br from-rose-blush to-white border-rose-light/60"
-              }`}
-            >
-              <p className={`font-serif text-[2rem] font-light leading-none ${stat.accent ? "text-white" : "text-rose-primary"}`}>
-                {stat.value}
-              </p>
-              <p className={`text-[11px] uppercase tracking-wide mt-1 ${stat.accent ? "text-white/75" : "text-clinic-muted"}`}>
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
+        {/* ── MOBILE: visual gallery + 2×2 stats ── */}
+        <div className="lg:hidden mt-6">
+          {/* Mini result image row — Replace with actual patient journey / treatment photos */}
+          <div className="grid grid-cols-3 gap-2 mb-4">
+            {results.map((r, i) => (
+              <div
+                key={i}
+                className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-rose-blush to-rose-light flex flex-col items-center justify-center gap-1 border border-rose-light/40"
+              >
+                {/* Replace with: <Image src={r.src ?? ""} fill alt={r.label} className="object-cover" /> */}
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="text-rose-primary/35">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <p className="text-[6px] text-rose-primary/35 tracking-widest uppercase text-center leading-tight px-1">{r.label.split(" ")[0]}</p>
+              </div>
+            ))}
+          </div>
+          {/* 2×2 stats grid */}
+          <div className="grid grid-cols-2 gap-3">
+            {mobileStats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={`rounded-[1.25rem] p-5 flex flex-col gap-1 border ${
+                  stat.accent
+                    ? "bg-gradient-to-br from-rose-primary to-rose-deep border-rose-deep text-white"
+                    : "bg-gradient-to-br from-rose-blush to-white border-rose-light/60"
+                }`}
+              >
+                <p className={`font-serif text-[2rem] font-light leading-none ${stat.accent ? "text-white" : "text-rose-primary"}`}>
+                  {stat.value}
+                </p>
+                <p className={`text-[11px] uppercase tracking-wide mt-1 ${stat.accent ? "text-white/75" : "text-clinic-muted"}`}>
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Mobile: short disclaimer */}
