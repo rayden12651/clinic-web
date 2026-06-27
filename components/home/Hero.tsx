@@ -133,7 +133,7 @@ export default function Hero() {
             >
               {/* Mobile image — with editorial stat badges */}
               {/* REPLACE: swap this div for <Image src="/your-photo.jpg" ... /> */}
-              <div className="lg:hidden h-[260px] sm:h-[360px] w-[86vw] max-w-[340px] rounded-[1.75rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25 flex flex-col items-center justify-center gap-3 relative">
+              <div className="lg:hidden h-[290px] sm:h-[360px] w-[86vw] max-w-[340px] rounded-[1.75rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25 flex flex-col items-center justify-center gap-3 relative">
                 <div className="text-rose-primary/35">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
@@ -214,27 +214,6 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Mobile-only: mini visual gallery strip — Replace with actual clinic photos */}
-          <div className="lg:hidden mt-4 mb-1 flex gap-2.5 overflow-x-auto -mx-5 px-5 pb-1 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
-            {[
-              { label: "Clinic Interior" },   // Replace: <Image src="/images/clinic.jpg" />
-              { label: "Treatment Suite" },   // Replace: <Image src="/images/treatment.jpg" />
-              { label: "Consultation Room" }, // Replace: <Image src="/images/consultation.jpg" />
-              { label: "Our Space" },         // Replace: <Image src="/images/space.jpg" />
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="shrink-0 w-[26vw] max-w-[100px] min-w-[82px] h-[58px] rounded-[0.875rem] overflow-hidden bg-gradient-to-br from-rose-blush to-rose-light flex flex-col items-center justify-center gap-0.5 border border-rose-light/50"
-              >
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-rose-primary/35">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                  <circle cx="12" cy="13" r="4"/>
-                </svg>
-                <p className="text-[6px] text-rose-primary/35 tracking-widest uppercase text-center leading-tight px-1">{item.label}</p>
-              </div>
-            ))}
-            <div className="shrink-0 w-2" aria-hidden />
-          </div>
         </div>
       </div>
 

@@ -88,27 +88,6 @@ export default function AboutPreview() {
           </div>
         </ScrollReveal>
 
-        {/* 2 image thumbnails — Replace with actual clinic interior photos */}
-        <ScrollReveal delay={0.25}>
-          <div className="mt-3 mx-4 grid grid-cols-2 gap-2.5">
-            {/* Replace with: <Image src="/images/treatment-suite.jpg" fill alt="Treatment Suite" className="object-cover" /> */}
-            <div className="aspect-[4/3] rounded-[1.1rem] overflow-hidden bg-gradient-to-br from-rose-blush to-rose-light/70 flex flex-col items-center justify-center gap-1 border border-rose-light/40">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="text-rose-primary/35">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                <circle cx="12" cy="13" r="4"/>
-              </svg>
-              <p className="text-[7px] text-rose-primary/35 tracking-widest uppercase text-center">Treatment Suite</p>
-            </div>
-            {/* Replace with: <Image src="/images/consultation.jpg" fill alt="Consultation Room" className="object-cover" /> */}
-            <div className="aspect-[4/3] rounded-[1.1rem] overflow-hidden bg-gradient-to-br from-rose-mid/20 to-rose-light/50 flex flex-col items-center justify-center gap-1 border border-rose-light/40">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="text-rose-primary/35">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              <p className="text-[7px] text-rose-primary/35 tracking-widest uppercase text-center">Consultation Room</p>
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
 
       {/* ══════════════════════════════════════════════════════════

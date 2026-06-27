@@ -21,16 +21,6 @@ export default function AppointmentCTA() {
       <div className="relative z-10 max-w-4xl mx-auto px-4 lg:px-6">
         {/* Mobile: luxury invitation card wrapper — transparent/invisible on desktop */}
         <div className="text-center bg-white/10 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none border border-white/20 lg:border-0 rounded-[2rem] lg:rounded-none px-5 py-8 lg:px-0 lg:py-0 shadow-xl shadow-black/10 lg:shadow-none">
-
-        {/* Doctor / clinic photo — mobile only. Replace with: <Image src="/images/doctor.jpg" fill alt="Dr. Pazit Khalil" className="object-cover rounded-[1.1rem]" /> */}
-        <div className="lg:hidden w-full max-w-[190px] mx-auto h-[120px] rounded-[1.25rem] overflow-hidden mb-6 bg-white/15 border border-white/20 flex flex-col items-center justify-center gap-2">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-white/35">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <p className="text-[8px] text-white/30 tracking-widest uppercase text-center">Replace with doctor photo</p>
-        </div>
-
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
