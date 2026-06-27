@@ -12,7 +12,7 @@ import { Sparkles, Leaf, Clock, Sun, Star, RefreshCcw } from "lucide-react";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore the personalised aesthetic and wellness services offered at Dr. Amara Clinic, including skin health, anti-aging care, and facial rejuvenation.",
+    "Explore the personalised aesthetic and wellness services offered at Dr. Pazit Clinic, including skin health, anti-aging care, and facial rejuvenation.",
 };
 
 const services = [
@@ -20,7 +20,7 @@ const services = [
     icon: <Sparkles size={22} />,
     title: "Aesthetic Consultation",
     description:
-      "Your journey begins here. A comprehensive, private consultation where Dr. Amara takes the time to understand your health history, aesthetic goals, and concerns — with no pressure and full transparency.",
+      "Your journey begins here. A comprehensive, private consultation where Dr. Pazit takes the time to understand your health history, aesthetic goals, and concerns — with no pressure and full transparency.",
     detail: [
       "In-depth skin and health assessment",
       "Goal-setting and expectation alignment",
@@ -178,7 +178,7 @@ export default function ServicesPage() {
         <section className="py-10 bg-white border-t border-clinic-border">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <p className="text-xs text-clinic-muted/70 leading-relaxed italic">
-              All services at Dr. Amara Clinic are consultation-based. Treatments are designed to support
+              All services at Dr. Pazit Clinic are consultation-based. Treatments are designed to support
               your goals and are not a guarantee of specific outcomes. Individual results vary. Medical
               information on this website is for informational purposes only and does not constitute
               medical advice.

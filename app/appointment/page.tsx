@@ -9,7 +9,7 @@ import { MessageCircle, Calendar, Clock, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Book an Appointment",
   description:
-    "Request an appointment at Dr. Amara Clinic. Book online, via WhatsApp, or use our Calendly scheduler.",
+    "Request an appointment at Dr. Pazit Clinic. Book online, via WhatsApp, or use our Calendly scheduler.",
 };
 
 /* ── REPLACE: Update WhatsApp URL and Calendly link ── */

@@ -12,9 +12,9 @@ import FAQPreview from "@/components/home/FAQPreview";
 import ContactPreview from "@/components/home/ContactPreview";
 
 export const metadata: Metadata = {
-  title: "Dr. Amara Clinic | Premium Medical Care With a Personal Touch",
+  title: "Dr. Pazit Clinic | Premium Medical Care With a Personal Touch",
   description:
-    "Dr. Amara Clinic offers luxury aesthetic consultations, skin health, anti-aging care, and personalised wellness plans in an elegant, confidential environment.",
+    "Dr. Pazit Clinic offers luxury aesthetic consultations, skin health, anti-aging care, and personalised wellness plans in an elegant, confidential environment.",
 };
 
 export default function HomePage() {

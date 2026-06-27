@@ -22,7 +22,7 @@ const TwitterIcon = () => (
 );
 
 /* ── REPLACE: Update all clinic info below ── */
-const CLINIC_NAME = "Dr. Amara Clinic";
+const CLINIC_NAME = "Dr. Pazit Clinic";
 const CLINIC_DESC =
   "A sanctuary of advanced aesthetic and wellness care, where precision meets elegance.";
 const CLINIC_PHONE = "+972 50 000 0000"; // Replace with real phone

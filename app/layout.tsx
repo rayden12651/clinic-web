@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 /* ── REPLACE: Update clinic name, description, and URL below ── */
-const CLINIC_NAME = "Dr. Amara Clinic";
+const CLINIC_NAME = "Dr. Pazit Clinic";
 const CLINIC_TAGLINE = "Premium Medical Care With a Personal Touch";
 const CLINIC_URL = "https://www.dramaraclinic.com"; // Replace with your actual URL
 
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: `%s | ${CLINIC_NAME}`,
   },
   description:
-    "Dr. Amara Clinic offers advanced aesthetic consultations, skin health treatments, anti-aging care, and personalized wellness plans in a luxury environment.",
+    "Dr. Pazit Clinic offers advanced aesthetic consultations, skin health treatments, anti-aging care, and personalized wellness plans in a luxury environment.",
   keywords: [
     "luxury clinic",
     "aesthetic clinic",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "anti-aging",
     "Dubai clinic",
     "medical spa",
-    "Dr Amara",
+    "Dr Pazit",
   ],
   openGraph: {
     type: "website",

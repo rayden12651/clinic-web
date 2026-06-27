@@ -50,7 +50,7 @@ export default function ServicesPreview() {
         <SectionTitle
           eyebrow="Our Services"
           title="Treatments Designed Around You"
-          subtitle="Each service at Dr. Amara Clinic is consultation-based and personalised — never one-size-fits-all."
+          subtitle="Each service at Dr. Pazit Clinic is consultation-based and personalised — never one-size-fits-all."
         />
 
         <div className="mt-10 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

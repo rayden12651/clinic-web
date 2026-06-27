@@ -8,7 +8,7 @@ const testimonials = [
     name: "Sarah M.",
     role: "Wellness Programme Client",
     review:
-      "From my very first consultation, I felt genuinely heard. Dr. Amara took the time to understand my skin concerns and created a plan that has made a visible difference. The clinic feels like a sanctuary.",
+      "From my very first consultation, I felt genuinely heard. Dr. Pazit took the time to understand my skin concerns and created a plan that has made a visible difference. The clinic feels like a sanctuary.",
     rating: 5,
   },
   {
@@ -36,14 +36,14 @@ const testimonials = [
     name: "Hana F.",
     role: "Anti-Aging Care Client",
     review:
-      "Dr. Amara has a rare ability to combine scientific expertise with genuine warmth. I always leave feeling confident and cared for. This clinic truly sets a new standard.",
+      "Dr. Pazit has a rare ability to combine scientific expertise with genuine warmth. I always leave feeling confident and cared for. This clinic truly sets a new standard.",
     rating: 5,
   },
   {
     name: "Rania J.",
     role: "Personalised Wellness Client",
     review:
-      "The attention to detail at every stage of my wellness plan has been remarkable. I feel healthier, more confident, and more like myself than I have in years. Thank you, Dr. Amara.",
+      "The attention to detail at every stage of my wellness plan has been remarkable. I feel healthier, more confident, and more like myself than I have in years. Thank you, Dr. Pazit.",
     rating: 5,
   },
 ];

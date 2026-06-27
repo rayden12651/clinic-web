@@ -12,7 +12,7 @@ const faqItems = [
   {
     question: "What should I expect at my first visit?",
     answer:
-      "Your initial consultation is a private, in-depth conversation with Dr. Amara. We will discuss your health history, aesthetic goals, and any concerns. There is no obligation — we believe in full transparency before any treatment begins.",
+      "Your initial consultation is a private, in-depth conversation with Dr. Pazit. We will discuss your health history, aesthetic goals, and any concerns. There is no obligation — we believe in full transparency before any treatment begins.",
   },
   {
     question: "Are treatments guaranteed to produce specific results?",
@@ -22,7 +22,7 @@ const faqItems = [
   {
     question: "How is my personal information kept private?",
     answer:
-      "Confidentiality is paramount at Dr. Amara Clinic. All personal and medical data is handled in strict accordance with healthcare privacy standards. We never share your information without your explicit consent.",
+      "Confidentiality is paramount at Dr. Pazit Clinic. All personal and medical data is handled in strict accordance with healthcare privacy standards. We never share your information without your explicit consent.",
   },
 ];
 

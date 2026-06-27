@@ -20,7 +20,7 @@ const FacebookIcon = () => (
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Dr. Amara Clinic. Contact us by phone, email, WhatsApp, or visit us at our Dubai clinic.",
+    "Get in touch with Dr. Pazit Clinic. Contact us by phone, email, WhatsApp, or visit us at our Dubai clinic.",
 };
 
 /* ── REPLACE: Update all contact information below ── */
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         className="flex items-center gap-3 text-sm text-clinic-muted hover:text-rose-primary transition-colors"
                       >
                         <FacebookIcon />
-                        Dr. Amara Clinic
+                        Dr. Pazit Clinic
                       </a>
                     </div>
                   </div>

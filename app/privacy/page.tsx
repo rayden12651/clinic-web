@@ -6,11 +6,11 @@ import ScrollReveal from "@/components/effects/ScrollReveal";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Dr. Amara Clinic's privacy policy — how we collect, use, and protect your personal information.",
+    "Dr. Pazit Clinic's privacy policy — how we collect, use, and protect your personal information.",
 };
 
 /* ── REPLACE: Update clinic name, email, and effective date ── */
-const CLINIC_NAME = "Dr. Amara Clinic";
+const CLINIC_NAME = "Dr. Pazit Clinic";
 const CONTACT_EMAIL = "hello@dramaraclinic.com";
 const EFFECTIVE_DATE = "1 January 2025";
 

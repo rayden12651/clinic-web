@@ -71,8 +71,8 @@ export default function AboutPreview() {
                 <em className="not-italic text-rose-primary">Elegance</em>
               </h2>
               <p className="text-clinic-muted leading-relaxed mb-4">
-                Dr. Amara Clinic was founded on a simple belief: that exceptional medical care
-                should feel as beautiful as it looks. Led by Dr. Amara Khalil, our clinic
+                Dr. Pazit Clinic was founded on a simple belief: that exceptional medical care
+                should feel as beautiful as it looks. Led by Dr. Pazit Khalil, our clinic
                 combines clinical excellence with a deeply personal approach — creating an
                 environment where you feel heard, valued, and cared for at every step.
               </p>

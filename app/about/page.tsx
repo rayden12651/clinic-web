@@ -11,7 +11,7 @@ import { Award, Shield, Heart, Star, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Dr. Amara Khalil and learn about the philosophy, values, and story behind Dr. Amara Clinic.",
+    "Meet Dr. Pazit Khalil and learn about the philosophy, values, and story behind Dr. Pazit Clinic.",
 };
 
 const values = [
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 Our Story
               </p>
               <h1 className="font-serif font-light text-5xl md:text-6xl lg:text-7xl text-clinic-dark leading-tight">
-                About <em className="not-italic text-rose-primary">Dr. Amara Clinic</em>
+                About <em className="not-italic text-rose-primary">Dr. Pazit Clinic</em>
               </h1>
               <p className="mt-6 text-clinic-muted text-lg leading-relaxed max-w-2xl mx-auto">
                 A sanctuary of advanced care, thoughtfully designed around you.
@@ -85,9 +85,9 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Doctor image */}
               <ScrollReveal direction="left">
-                {/* REPLACE: Add <Image> of Dr. Amara here */}
+                {/* REPLACE: Add <Image> of Dr. Pazit here */}
                 <MediaBlock
-                  label="Dr. Amara Khalil — Principal Physician"
+                  label="Dr. Pazit Khalil — Principal Physician"
                   aspectRatio="portrait"
                   rounded="2xl"
                 />
@@ -99,11 +99,11 @@ export default function AboutPage() {
                     Meet the Doctor
                   </p>
                   <h2 className="font-serif font-light text-4xl md:text-5xl text-clinic-dark leading-tight mb-6">
-                    Dr. Amara Khalil
+                    Dr. Pazit Khalil
                   </h2>
                   {/* REPLACE: Update with real doctor bio */}
                   <p className="text-clinic-muted leading-relaxed mb-4">
-                    Dr. Amara Khalil is a board-certified aesthetic physician with over a decade
+                    Dr. Pazit Khalil is a board-certified aesthetic physician with over a decade
                     of experience helping patients feel confident, healthy, and beautifully
                     themselves. Trained across leading institutions in Europe and the Middle East,
                     she brings a rare combination of scientific precision and an artist's eye to
@@ -116,7 +116,7 @@ export default function AboutPage() {
                     that makes you uniquely you.
                   </p>
                   <p className="text-clinic-muted leading-relaxed mb-8">
-                    Dr. Amara founded this clinic with a vision to create a space where
+                    Dr. Pazit founded this clinic with a vision to create a space where
                     excellence, elegance, and emotional care are not in conflict — but
                     are one and the same.
                   </p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
             <SectionTitle
               eyebrow="Our Values"
               title="What We Believe In"
-              subtitle="Every decision at Dr. Amara Clinic is guided by these core principles."
+              subtitle="Every decision at Dr. Pazit Clinic is guided by these core principles."
             />
 
             <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -189,7 +189,7 @@ export default function AboutPage() {
 
         <CTASection
           eyebrow="Your Journey Starts Here"
-          title="Ready to Meet Dr. Amara?"
+          title="Ready to Meet Dr. Pazit?"
           subtitle="Book a confidential consultation and experience care that is truly personal."
           primaryBtn={{ label: "Book a Consultation", href: "/appointment" }}
           secondaryBtn={{ label: "View Services", href: "/services" }}

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const CLINIC_NAME = "Dr. Amara Clinic";
+const CLINIC_NAME = "Dr. Pazit Clinic";
 const WHATSAPP_URL =
   "https://wa.me/972500000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment";
 
