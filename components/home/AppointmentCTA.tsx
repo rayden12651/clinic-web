@@ -10,7 +10,7 @@ const WHATSAPP_URL =
 
 export default function AppointmentCTA() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-rose-primary via-rose-deep to-[#8A4848]">
+    <section className="py-14 lg:py-24 relative overflow-hidden bg-gradient-to-br from-rose-primary via-rose-deep to-[#8A4848]">
       {/* Decorative circles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/5 border border-white/10" />
@@ -34,7 +34,7 @@ export default function AppointmentCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          className="font-serif font-light text-4xl md:text-5xl lg:text-[3.5rem] text-white leading-tight"
+          className="font-serif font-light text-[1.875rem] sm:text-4xl lg:text-[3.5rem] text-white leading-tight"
         >
           Ready to Experience{" "}
           <br className="hidden sm:block" />
@@ -57,7 +57,7 @@ export default function AppointmentCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, delay: 0.28 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-6 lg:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
             href="/appointment"

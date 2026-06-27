@@ -29,10 +29,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   return (
     <>
@@ -43,17 +48,13 @@ export default function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* h-16 on mobile (64px), h-20 on desktop (80px) */}
+          <div className="flex items-center justify-between h-16 md:h-20">
+
             {/* Logo */}
             <Link href="/" className="flex flex-col leading-none group">
-              <span
-                className={`font-serif text-xl font-light tracking-widest uppercase transition-colors duration-300 ${
-                  scrolled || menuOpen
-                    ? "text-clinic-dark"
-                    : "text-clinic-dark"
-                }`}
-              >
+              <span className="font-serif text-base md:text-xl font-light tracking-[0.2em] md:tracking-widest uppercase text-clinic-dark transition-colors duration-300">
                 {CLINIC_NAME}
               </span>
               <span className="divider-gold mt-1 group-hover:w-full transition-all duration-500" />
@@ -94,7 +95,7 @@ export default function Header() {
               </a>
               <Link
                 href="/appointment"
-                className="relative overflow-hidden px-6 py-2.5 bg-rose-primary text-white text-sm font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/20 hover:-translate-y-0.5"
+                className="px-6 py-2.5 bg-rose-primary text-white text-sm font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/20 hover:-translate-y-0.5"
               >
                 Book Appointment
               </Link>
@@ -106,7 +107,7 @@ export default function Header() {
               className="md:hidden p-2 text-clinic-dark hover:text-rose-primary transition-colors"
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -116,23 +117,23 @@ export default function Header() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 z-40 bg-white pt-20 px-6 flex flex-col md:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="fixed inset-0 z-40 bg-white pt-16 px-6 flex flex-col md:hidden"
           >
-            <nav className="flex flex-col gap-6 mt-8">
+            <nav className="flex flex-col gap-5 mt-8">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07, duration: 0.3 }}
+                  transition={{ delay: i * 0.06, duration: 0.25 }}
                 >
                   <Link
                     href={link.href}
-                    className={`font-serif text-3xl font-light tracking-wide ${
+                    className={`font-serif text-2xl font-light tracking-wide block ${
                       pathname === link.href
                         ? "text-rose-primary"
                         : "text-clinic-dark hover:text-rose-primary"
@@ -147,12 +148,12 @@ export default function Header() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.35 }}
-              className="mt-auto mb-12 flex flex-col gap-4"
+              transition={{ delay: 0.3 }}
+              className="mt-auto mb-10 flex flex-col gap-3"
             >
               <Link
                 href="/appointment"
-                className="w-full py-4 bg-rose-primary text-white text-center font-medium tracking-widest uppercase rounded-full hover:bg-rose-deep transition-colors"
+                className="w-full py-3.5 bg-rose-primary text-white text-center text-sm font-medium tracking-widest uppercase rounded-full hover:bg-rose-deep transition-colors"
               >
                 Book Appointment
               </Link>
@@ -160,7 +161,7 @@ export default function Header() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 border border-clinic-border text-clinic-body text-center text-sm tracking-widest uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-colors"
+                className="w-full py-3.5 border border-clinic-border text-clinic-body text-center text-sm tracking-widest uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-colors"
               >
                 WhatsApp Us
               </a>

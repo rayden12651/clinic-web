@@ -28,7 +28,7 @@ const faqItems = [
 
 export default function FAQPreview() {
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="py-14 lg:py-24 bg-white">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <SectionTitle
           eyebrow="Questions Answered"
@@ -36,7 +36,7 @@ export default function FAQPreview() {
           subtitle="We believe informed patients make empowered decisions. Here are some of the questions we hear most often."
         />
 
-        <div className="mt-14">
+        <div className="mt-8 lg:mt-14">
           <FAQ items={faqItems} />
         </div>
 

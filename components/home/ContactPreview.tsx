@@ -33,7 +33,7 @@ const contactItems = [
 
 export default function ContactPreview() {
   return (
-    <section className="py-24 lg:py-32 bg-clinic-dark">
+    <section className="py-14 lg:py-24 bg-clinic-dark">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionTitle
           eyebrow="Find Us"
@@ -42,7 +42,7 @@ export default function ContactPreview() {
           light
         />
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 lg:mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {contactItems.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-rose-primary/30 transition-all duration-300">

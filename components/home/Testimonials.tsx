@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 lg:py-32 bg-rose-blush">
+    <section className="py-14 lg:py-24 bg-rose-blush">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionTitle
           eyebrow="Patient Reviews"
@@ -58,7 +58,7 @@ export default function Testimonials() {
           subtitle="Our patients' experiences are the true measure of everything we do."
         />
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 lg:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <TestimonialCard
               key={i}

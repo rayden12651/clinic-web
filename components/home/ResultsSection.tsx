@@ -32,7 +32,7 @@ const disclaimer =
 
 export default function ResultsSection() {
   return (
-    <section className="py-24 lg:py-32 bg-white overflow-hidden">
+    <section className="py-14 lg:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionTitle
           eyebrow="Patient Journeys"
@@ -41,7 +41,7 @@ export default function ResultsSection() {
         />
 
         {/* Results grid */}
-        <div className="mt-16 grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="mt-10 lg:mt-16 grid md:grid-cols-3 gap-6 lg:gap-8">
           {results.map((r, i) => (
             <ScrollReveal key={i} delay={i * 0.12}>
               <div className="group flex flex-col gap-4">

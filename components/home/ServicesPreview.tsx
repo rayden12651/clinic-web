@@ -45,7 +45,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="py-24 lg:py-32 bg-rose-blush">
+    <section className="py-14 lg:py-24 bg-rose-blush">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionTitle
           eyebrow="Our Services"
@@ -53,7 +53,7 @@ export default function ServicesPreview() {
           subtitle="Each service at Dr. Amara Clinic is consultation-based and personalised — never one-size-fits-all."
         />
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((svc, i) => (
             <ServiceCard
               key={i}
