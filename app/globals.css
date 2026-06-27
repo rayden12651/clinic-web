@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* ─── Brand Rose Palette ─── */
-  --color-rose-blush:   #FBF4F1;
-  --color-rose-light:   #F5E0D8;
-  --color-rose-mid:     #E8BDB4;
-  --color-rose-primary: #C4847A;
-  --color-rose-deep:    #9E6059;
-  --color-rose-dark:    #7A4540;
+  /* ─── Brand Pink Palette ─── */
+  --color-rose-blush:   #FBECEF;
+  --color-rose-light:   #F7D8DF;
+  --color-rose-mid:     #E9A8B8;
+  --color-rose-primary: #D97C92;
+  --color-rose-deep:    #C96B82;
+  --color-rose-dark:    #A85268;
 
   /* ─── Gold / Champagne ─── */
   --color-gold-pale:  #F5EDD8;

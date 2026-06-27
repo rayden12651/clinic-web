@@ -10,7 +10,7 @@ const WHATSAPP_URL =
 
 export default function AppointmentCTA() {
   return (
-    <section className="py-14 lg:py-24 relative overflow-hidden bg-gradient-to-br from-rose-primary via-rose-deep to-[#8A4848]">
+    <section className="py-14 lg:py-24 relative overflow-hidden bg-gradient-to-br from-rose-primary via-rose-deep to-[#8B3856]">
       {/* Decorative circles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/5 border border-white/10" />
