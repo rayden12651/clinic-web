@@ -52,31 +52,37 @@ export default function Hero() {
       ══════════════════════════════════════════════════════════ */}
       <div className="lg:hidden relative z-10">
 
-        {/* Short eyebrow + compact serif headline */}
-        <div className="pt-[68px] pb-4 px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center gap-2 mb-4"
+        {/* Minimal centered text — eyebrow + headline + thin accent */}
+        <div className="pt-[80px] pb-3 px-5 text-center">
+          {/* Subtle specialty label — understated, not declarative */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="text-[9px] font-medium tracking-[0.35em] uppercase text-rose-primary/60 mb-4"
           >
-            <div className="h-px w-5 bg-rose-primary" />
-            <span className="text-[10px] font-semibold tracking-[0.28em] uppercase text-rose-primary">
-              Luxury Medical Care
-            </span>
-          </motion.div>
+            Aesthetic &nbsp;·&nbsp; Medicine
+          </motion.p>
 
-          {/* Short mobile headline — keeps hero compact and elegant */}
+          {/* Centered serif headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-serif font-light text-[40px] leading-[0.93] tracking-[-0.025em] text-clinic-dark"
+            transition={{ duration: 0.75, delay: 0.16, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-serif font-light text-[38px] leading-[1.0] tracking-[-0.02em] text-clinic-dark"
           >
             Premium{" "}
             <em className="not-italic text-rose-primary">Care,</em>
             <br />Personal Touch
           </motion.h1>
+
+          {/* Thin accent line — visual bridge into image */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-5 h-px w-8 bg-rose-primary/35 mx-auto"
+          />
         </div>
 
         {/* Hero image — full width, close to title, forms the visual centrepiece */}
@@ -116,17 +122,17 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Subtitle + compact buttons — below image */}
+        {/* Subtitle + compact buttons — below image, centered */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="px-5 pt-5 pb-6"
+          className="px-5 pt-5 pb-6 text-center"
         >
-          <p className="text-[13px] text-clinic-muted leading-[1.65] mb-4">
+          <p className="text-[12px] text-clinic-muted leading-[1.7] mb-5">
             Tailored aesthetic care, designed around you.
           </p>
-          <div className="flex items-center gap-2.5 mb-3">
+          <div className="flex items-center justify-center gap-2.5 mb-3">
             <Link
               href="/appointment"
               className="group inline-flex items-center gap-1.5 px-5 py-2.5 bg-rose-primary text-white text-[11px] font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25 whitespace-nowrap"
@@ -141,8 +147,8 @@ export default function Hero() {
               Services
             </Link>
           </div>
-          <p className="text-[10px] text-clinic-muted/50 tracking-wide">
-            ✦&nbsp; Consultation-based &nbsp;·&nbsp; Strictly confidential
+          <p className="text-[9px] text-clinic-muted/45 tracking-[0.12em] uppercase">
+            Consultation-based &nbsp;·&nbsp; Strictly confidential
           </p>
         </motion.div>
       </div>

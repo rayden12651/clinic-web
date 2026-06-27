@@ -50,7 +50,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex flex-col leading-none group">
-              <span className="font-serif text-[15px] sm:text-base lg:text-xl font-light tracking-[0.15em] sm:tracking-[0.2em] lg:tracking-widest uppercase text-clinic-dark">
+              <span className="font-serif text-[17px] sm:text-base lg:text-xl font-light tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-widest uppercase text-clinic-dark">
                 {CLINIC_NAME}
               </span>
               <span className="divider-gold mt-0.5 group-hover:w-full transition-all duration-500" />
