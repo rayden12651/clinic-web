@@ -30,7 +30,7 @@ export default function AboutPreview() {
       {/* ══════════════════════════════════════════════════════════
           MOBILE — editorial overlapping card layout
       ══════════════════════════════════════════════════════════ */}
-      <div className="lg:hidden pt-14 pb-6">
+      <div className="lg:hidden pt-10 pb-10">
         {/* Image — padded, with stat badge */}
         <ScrollReveal>
           <div className="relative mx-4">
@@ -56,21 +56,21 @@ export default function AboutPreview() {
 
         {/* Text card — overlaps the image bottom */}
         <ScrollReveal delay={0.15}>
-          <div className="relative z-10 -mt-10 mx-4 bg-white/96 backdrop-blur-sm rounded-[1.75rem] border border-rose-light/60 shadow-2xl shadow-rose-primary/6 p-6">
-            <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-rose-primary mb-2">
+          <div className="relative z-10 -mt-10 mx-3 bg-white/96 backdrop-blur-sm rounded-[1.75rem] border border-rose-light/60 shadow-2xl shadow-rose-primary/6 px-6 py-7">
+            <p className="text-[9px] font-medium tracking-[0.32em] uppercase text-rose-primary/70 mb-3">
               About the Clinic
             </p>
-            <h2 className="font-serif font-light text-[1.625rem] text-clinic-dark leading-[1.15] mb-3">
-              Where Expertise Meets{" "}
-              <em className="not-italic text-rose-primary">Elegance</em>
+            <h2 className="font-serif font-light text-[1.75rem] text-clinic-dark leading-[1.1] mb-3">
+              Where Expertise Meets
+              <br /><em className="not-italic text-rose-primary">Elegance</em>
             </h2>
-            <p className="text-[13px] text-clinic-muted leading-relaxed mb-5">
-              Led by Dr. Pazit Khalil — clinical precision meets genuine personal care.
+            <p className="text-[13px] text-clinic-muted leading-relaxed mb-4">
+              Personal care, refined with clinical precision.
             </p>
 
-            {/* Trust chips */}
+            {/* Trust chips — 2 on mobile only */}
             <div className="flex flex-wrap gap-2 pt-4 border-t border-rose-blush mb-5">
-              {["Private Care", "Advanced Clinic", "Personal Approach"].map((chip) => (
+              {["Private Care", "Personal Approach"].map((chip) => (
                 <span key={chip} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-blush border border-rose-light/70 text-[11px] font-medium text-rose-primary tracking-wide">
                   <span className="w-1 h-1 rounded-full bg-rose-primary" />
                   {chip}
@@ -80,10 +80,10 @@ export default function AboutPreview() {
 
             <Link
               href="/about"
-              className="group inline-flex items-center gap-2 text-[13px] font-medium text-rose-primary hover:text-rose-deep transition-colors"
+              className="group inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-rose-primary hover:text-rose-deep transition-colors"
             >
               Discover Our Story
-              <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </ScrollReveal>
