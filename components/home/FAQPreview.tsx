@@ -37,7 +37,10 @@ export default function FAQPreview() {
         />
 
         <div className="mt-8 lg:mt-14">
-          <FAQ items={faqItems} />
+          {/* Mobile: premium blush card wrapper */}
+          <div className="bg-rose-blush lg:bg-transparent border border-rose-light/50 lg:border-0 rounded-[1.75rem] lg:rounded-none p-5 lg:p-0 shadow-sm lg:shadow-none">
+            <FAQ items={faqItems} />
+          </div>
         </div>
 
         <ScrollReveal delay={0.3}>

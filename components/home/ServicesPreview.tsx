@@ -53,7 +53,24 @@ export default function ServicesPreview() {
           subtitle="Each service at Dr. Pazit Clinic is consultation-based and personalised — never one-size-fits-all."
         />
 
-        <div className="mt-10 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile: horizontal scroll carousel */}
+        <div className="lg:hidden mt-8 flex overflow-x-auto gap-3.5 pb-3 -mx-5 px-5 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+          {services.map((svc, i) => (
+            <div key={i} className="snap-start shrink-0 w-[72vw] max-w-[250px]">
+              <ServiceCard
+                icon={svc.icon}
+                title={svc.title}
+                description={svc.description}
+                delay={0}
+              />
+            </div>
+          ))}
+          {/* Trailing spacer so last card doesn't sit at screen edge */}
+          <div className="shrink-0 w-1" aria-hidden />
+        </div>
+
+        {/* Desktop: three-column grid */}
+        <div className="hidden lg:grid mt-16 grid-cols-3 gap-6">
           {services.map((svc, i) => (
             <ServiceCard
               key={i}

@@ -41,7 +41,7 @@ export default function ResultsSection() {
         />
 
         {/* Results grid */}
-        <div className="mt-10 lg:mt-16 grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="mt-10 lg:mt-16 grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
           {results.map((r, i) => (
             <ScrollReveal key={i} delay={i * 0.12}>
               <div className="group flex flex-col gap-4">

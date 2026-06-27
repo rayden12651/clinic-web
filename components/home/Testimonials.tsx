@@ -58,7 +58,24 @@ export default function Testimonials() {
           subtitle="Our patients' experiences are the true measure of everything we do."
         />
 
-        <div className="mt-10 lg:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile: horizontal scroll carousel */}
+        <div className="lg:hidden mt-8 flex overflow-x-auto gap-3.5 pb-3 -mx-5 px-5 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+          {testimonials.map((t, i) => (
+            <div key={i} className="snap-start shrink-0 w-[80vw] max-w-[290px]">
+              <TestimonialCard
+                name={t.name}
+                role={t.role}
+                review={t.review}
+                rating={t.rating}
+                delay={0}
+              />
+            </div>
+          ))}
+          <div className="shrink-0 w-1" aria-hidden />
+        </div>
+
+        {/* Desktop: three-column grid */}
+        <div className="hidden lg:grid mt-16 grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <TestimonialCard
               key={i}

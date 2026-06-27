@@ -18,7 +18,9 @@ export default function AppointmentCTA() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/3" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 lg:px-6">
+        {/* Mobile: luxury invitation card wrapper — transparent/invisible on desktop */}
+        <div className="text-center bg-white/10 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none border border-white/20 lg:border-0 rounded-[2rem] lg:rounded-none px-5 py-8 lg:px-0 lg:py-0 shadow-xl shadow-black/10 lg:shadow-none">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,6 +89,7 @@ export default function AppointmentCTA() {
         >
           Appointments confirmed within 24 hours · Strictly confidential
         </motion.p>
+        </div>{/* end mobile card wrapper */}
       </div>
     </section>
   );

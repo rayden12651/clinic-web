@@ -130,7 +130,7 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 0.25 }}
               className="flex justify-center lg:justify-start mt-5 lg:mt-0"
             >
-              {/* Mobile image — no parallax, no floating badges */}
+              {/* Mobile image — with editorial stat badges */}
               {/* REPLACE: swap this div for <Image src="/your-photo.jpg" ... /> */}
               <div className="lg:hidden h-[360px] sm:h-[420px] w-[88vw] max-w-[380px] rounded-[1.75rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25 flex flex-col items-center justify-center gap-3 relative">
                 <div className="text-rose-primary/35">
@@ -143,6 +143,19 @@ export default function Hero() {
                   Replace with clinic photo
                 </p>
                 <div className="absolute inset-2 rounded-[1.4rem] border border-white/30 pointer-events-none" />
+                {/* Stat badge — bottom left */}
+                <div className="absolute bottom-4 left-4 bg-white/92 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 border border-white/70 shadow-lg">
+                  <p className="font-serif text-lg text-rose-primary font-medium leading-none">500+</p>
+                  <p className="text-[9px] text-clinic-muted mt-0.5 uppercase tracking-wide">Patients</p>
+                </div>
+                {/* Satisfaction badge — bottom right */}
+                <div className="absolute bottom-4 right-4 bg-white/92 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 border border-white/70 shadow-lg flex items-center gap-1.5">
+                  <span className="text-[#C9A96E] text-base leading-none">★</span>
+                  <div>
+                    <p className="font-serif text-lg text-rose-primary font-medium leading-none">98%</p>
+                    <p className="text-[9px] text-clinic-muted mt-0.5 uppercase tracking-wide">Rated</p>
+                  </div>
+                </div>
               </div>
 
               {/* Desktop image — with parallax + floating badges */}
