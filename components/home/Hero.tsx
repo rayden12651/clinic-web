@@ -88,7 +88,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.85 }}
-            className="mt-6 text-[9px] text-white/35 tracking-[0.16em] uppercase"
+            className="mt-6 text-[9px] text-white/60 tracking-[0.16em] uppercase"
           >
             Consultation-based &nbsp;·&nbsp; Strictly confidential
           </motion.p>

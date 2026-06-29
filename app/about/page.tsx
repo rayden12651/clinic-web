@@ -228,10 +228,10 @@ export default function AboutPage() {
                 </ScrollReveal>
               ))}
             </div>
-            <p className="mt-4 text-center text-[11px] lg:hidden text-clinic-muted/60 italic">
+            <p className="mt-4 text-center text-[11px] lg:hidden text-clinic-muted italic">
               Designed to feel like a retreat — calm, beautiful, and entirely yours.
             </p>
-            <p className="hidden lg:block mt-6 text-center text-sm text-clinic-muted/70 max-w-md mx-auto">
+            <p className="hidden lg:block mt-6 text-center text-sm text-clinic-muted/85 max-w-md mx-auto">
               Designed to feel like a retreat — calm, beautiful, and entirely yours during your visit.
             </p>
           </div>
@@ -241,7 +241,7 @@ export default function AboutPage() {
         <section className="py-10 lg:py-20 bg-gradient-to-br from-rose-primary to-rose-deep">
           <div className="max-w-2xl mx-auto px-5 lg:px-8 text-center">
             <ScrollReveal>
-              <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-rose-light/70 mb-3">
+              <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-white/85 mb-3">
                 Your Journey Starts Here
               </p>
               <h2 className="font-serif font-light text-[1.75rem] lg:text-4xl text-white leading-tight mb-3">

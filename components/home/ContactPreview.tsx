@@ -61,7 +61,7 @@ export default function ContactPreview() {
               <MessageCircle size={20} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-[10px] text-white/40 uppercase tracking-wider mb-0.5">WhatsApp</p>
+              <p className="text-[10px] text-white/65 uppercase tracking-wider mb-0.5">WhatsApp</p>
               <p className="text-[14px] text-white font-medium">Chat With Us Now</p>
             </div>
             <ArrowRight size={15} className="text-[#25D366]/60 shrink-0" />
@@ -76,10 +76,10 @@ export default function ContactPreview() {
               <Phone size={18} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-[10px] text-white/40 uppercase tracking-wider mb-0.5">Phone</p>
+              <p className="text-[10px] text-white/65 uppercase tracking-wider mb-0.5">Phone</p>
               <p className="text-[14px] text-white/85">+972 50 000 0000</p>
             </div>
-            <ArrowRight size={15} className="text-white/20 shrink-0" />
+            <ArrowRight size={15} className="text-white/45 shrink-0" />
           </a>
 
           {/* Location + Hours — side by side */}
@@ -92,7 +92,7 @@ export default function ContactPreview() {
                 <MapPin size={16} />
               </div>
               <div>
-                <p className="text-[10px] text-white/40 uppercase tracking-wider mb-0.5">Location</p>
+                <p className="text-[10px] text-white/65 uppercase tracking-wider mb-0.5">Location</p>
                 <p className="text-[12px] text-white/80 leading-snug">Dubai Healthcare City</p>
               </div>
             </a>
@@ -101,7 +101,7 @@ export default function ContactPreview() {
                 <Clock size={16} />
               </div>
               <div>
-                <p className="text-[10px] text-white/40 uppercase tracking-wider mb-0.5">Hours</p>
+                <p className="text-[10px] text-white/65 uppercase tracking-wider mb-0.5">Hours</p>
                 <p className="text-[12px] text-white/80 leading-snug">Mon–Sat<br/>9 AM – 7 PM</p>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function ContactPreview() {
                   <div className="w-10 h-10 rounded-xl bg-rose-primary/20 flex items-center justify-center text-rose-mid mb-5">
                     {item.icon}
                   </div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-2">
+                  <p className="text-xs font-semibold tracking-widest uppercase text-white/65 mb-2">
                     {item.label}
                   </p>
                   {item.href ? (
@@ -147,7 +147,7 @@ export default function ContactPreview() {
           {/* Map placeholder */}
           <ScrollReveal delay={0.3}>
             <div className="mt-10 rounded-2xl overflow-hidden border border-white/10 h-56 bg-white/5 flex items-center justify-center">
-              <div className="text-center text-white/30">
+              <div className="text-center text-white/55">
                 <MapPin size={28} className="mx-auto mb-2" />
                 <p className="text-xs tracking-widest uppercase">
                   Replace with Google Maps embed

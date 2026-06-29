@@ -95,7 +95,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-sans text-xs font-semibold tracking-widest uppercase text-white/40 mb-5">
+            <h4 className="font-sans text-xs font-semibold tracking-widest uppercase text-white/60 mb-5">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -114,7 +114,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-sans text-xs font-semibold tracking-widest uppercase text-white/40 mb-5">
+            <h4 className="font-sans text-xs font-semibold tracking-widest uppercase text-white/60 mb-5">
               Our Services
             </h4>
             <ul className="space-y-3">
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-sans text-xs font-semibold tracking-widest uppercase text-white/40 mb-5">
+            <h4 className="font-sans text-xs font-semibold tracking-widest uppercase text-white/60 mb-5">
               Contact Us
             </h4>
             <ul className="space-y-4">
@@ -179,18 +179,18 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/55">
             © {new Date().getFullYear()} {CLINIC_NAME}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="text-xs text-white/30 hover:text-white/60 transition-colors"
+              className="text-xs text-white/55 hover:text-white/60 transition-colors"
             >
               Privacy Policy
             </Link>
-            <span className="text-xs text-white/30">|</span>
-            <span className="text-xs text-white/30">
+            <span className="text-xs text-white/55">|</span>
+            <span className="text-xs text-white/55">
               Medical content is for informational purposes only.
             </span>
           </div>
