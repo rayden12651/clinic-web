@@ -4,11 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const stats = [
-  { value: "500+", label: "Patients" },
-  { value: "10+",  label: "Years" },
-  { value: "98%",  label: "Rated" },
-];
 
 export default function Hero() {
   return (
@@ -96,18 +91,19 @@ export default function Hero() {
       </div>
 
       {/* ════════════════════════════════════════════════════════════
-          DESKTOP HERO — white text panel (left) + video (right)
+          DESKTOP HERO — cinematic text panel (left) + video (right)
       ════════════════════════════════════════════════════════════ */}
       <div className="hidden lg:flex min-h-screen">
 
-        {/* Left: white text panel */}
+        {/* Left: editorial text panel */}
         <div className="w-[42%] xl:w-[38%] flex flex-col justify-center px-14 xl:px-20 py-28 bg-white border-r border-clinic-border relative z-10">
 
+          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-3 mb-10"
+            className="flex items-center gap-3 mb-14"
           >
             <div className="h-px w-8 bg-rose-primary" />
             <span className="text-[10px] font-medium tracking-[0.32em] uppercase text-rose-primary">
@@ -115,61 +111,49 @@ export default function Hero() {
             </span>
           </motion.div>
 
+          {/* Headline — two lines, cinematic */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-serif font-light text-[52px] xl:text-[64px] leading-[0.92] tracking-[-0.025em] text-clinic-dark mb-8"
+            className="font-serif font-light text-[56px] xl:text-[68px] leading-[0.93] tracking-[-0.025em] text-clinic-dark mb-10"
           >
-            Premium<br />Medical{" "}
-            <em className="not-italic text-rose-primary">Care</em>
-            <br />With a<br />Personal Touch
+            Refined <em className="not-italic text-rose-primary">Care,</em>
+            <br />Quiet Luxury.
           </motion.h1>
 
+          {/* Single-line description */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.34 }}
-            className="text-[13px] xl:text-sm text-clinic-muted leading-[1.8] max-w-[280px] mb-10"
+            className="text-[13px] text-clinic-muted leading-[1.85] max-w-[220px] mb-14"
           >
-            Where advanced aesthetic care meets the art of living well. Every treatment thoughtfully tailored to you.
+            Personalized aesthetic care in a calm, private clinical setting.
           </motion.p>
 
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.46 }}
-            className="flex items-center gap-6 mb-14"
+            className="flex items-center gap-7"
           >
             <Link
               href="/appointment"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-rose-primary text-white text-[11px] font-medium tracking-[0.2em] uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-rose-primary text-white text-[11px] font-medium tracking-[0.2em] uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25"
             >
               Book Consultation
-              <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+              <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
             <Link
               href="/services"
-              className="text-[11px] font-medium tracking-[0.18em] uppercase text-clinic-muted hover:text-clinic-dark transition-colors duration-300 border-b border-clinic-muted/30 hover:border-clinic-dark pb-0.5"
+              className="text-[10px] tracking-[0.18em] uppercase text-clinic-muted/70 hover:text-rose-primary transition-colors duration-300"
             >
               Our Services
             </Link>
           </motion.div>
 
-          {/* Stat row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.65 }}
-            className="flex items-center gap-8 pt-8 border-t border-clinic-border"
-          >
-            {stats.map((stat, i) => (
-              <div key={i}>
-                <p className="font-serif text-2xl text-clinic-dark font-light leading-none">{stat.value}</p>
-                <p className="text-[9px] uppercase tracking-widest text-clinic-muted mt-1.5">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         {/* Right: video panel */}
