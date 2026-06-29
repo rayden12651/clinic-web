@@ -35,14 +35,7 @@ export default function AboutPreview() {
         <ScrollReveal>
           <div className="relative mx-4">
             {/* REPLACE: Replace with <Image> of the doctor or clinic interior */}
-            <div className="w-full h-[360px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light to-rose-mid relative flex items-center justify-center">
-              <div className="text-center px-8 text-rose-primary/40">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="mx-auto mb-2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-                <p className="text-[9px] tracking-widest uppercase">Doctor photo here</p>
-              </div>
+            <div className="w-full h-[360px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light to-rose-mid relative">
               {/* Inset border */}
               <div className="absolute inset-3 rounded-[1.6rem] border border-white/30 pointer-events-none" />
               {/* Stat badge */}
@@ -100,15 +93,7 @@ export default function AboutPreview() {
           <ScrollReveal direction="left">
             <div className="relative">
               {/* REPLACE: Replace with <Image> of the doctor or clinic interior */}
-              <div className="w-full aspect-[3/4] max-w-sm mx-auto rounded-[2.5rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light to-rose-mid flex items-center justify-center">
-                <div className="text-center px-8 text-rose-primary/40">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="mx-auto mb-3">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                  </svg>
-                  <p className="text-xs tracking-widest uppercase">Doctor photo here<br/>(400×530 px)</p>
-                </div>
-              </div>
+              <div className="w-full aspect-[3/4] max-w-sm mx-auto rounded-[2.5rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light to-rose-mid" />
 
               {/* Floating accent card */}
               <motion.div

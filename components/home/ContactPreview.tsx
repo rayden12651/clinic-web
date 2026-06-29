@@ -149,9 +149,7 @@ export default function ContactPreview() {
             <div className="mt-10 rounded-2xl overflow-hidden border border-white/10 h-56 bg-white/5 flex items-center justify-center">
               <div className="text-center text-white/55">
                 <MapPin size={28} className="mx-auto mb-2" />
-                <p className="text-xs tracking-widest uppercase">
-                  Replace with Google Maps embed
-                </p>
+                <p className="text-xs tracking-widest uppercase">Dubai Healthcare City</p>
               </div>
             </div>
           </ScrollReveal>

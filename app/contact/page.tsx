@@ -194,9 +194,7 @@ export default function ContactPage() {
                     <div className="h-52 flex flex-col items-center justify-center gap-3 text-clinic-muted/40">
                       <MapPin size={24} />
                       <p className="text-xs tracking-widest uppercase text-center px-4">
-                        Replace with Google Maps embed
-                        <br />
-                        (see code comment above)
+                        Dubai Healthcare City
                       </p>
                     </div>
                     <div className="p-5 border-t border-clinic-border">

@@ -35,14 +35,6 @@ export default function Hero() {
         {/* Bottom-to-top gradient for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 pointer-events-none" />
 
-        {/* Placeholder indicator — remove once real video is added */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 text-white/20 pointer-events-none">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75">
-            <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.845v6.31a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/>
-          </svg>
-          <p className="text-[8px] tracking-[0.3em] uppercase">Add video: /videos/hero.mp4</p>
-        </div>
-
         {/* Content pinned to bottom */}
         <div className="relative z-10 mt-auto px-6 pb-12 pt-28">
           <motion.p
@@ -161,15 +153,6 @@ export default function Hero() {
           {/* Warm rose placeholder background */}
           <div className="absolute inset-0 bg-gradient-to-br from-rose-light via-rose-mid/70 to-rose-deep/40" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_30%_30%,rgba(255,255,255,0.18),transparent)]" />
-
-          {/* Placeholder indicator */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/40 pointer-events-none">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75">
-              <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.845v6.31a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/>
-            </svg>
-            <p className="text-[10px] tracking-[0.28em] uppercase">Replace with clinic video</p>
-            <p className="text-[9px] opacity-60">/public/videos/hero.mp4</p>
-          </div>
 
           <video
             autoPlay

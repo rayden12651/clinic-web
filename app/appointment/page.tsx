@@ -244,7 +244,7 @@ export default function AppointmentPage() {
                     <Clock size={26} />
                   </div>
                   <p className="text-[13px] text-clinic-muted max-w-xs leading-relaxed">
-                    Calendar will appear here once connected.
+                    Book your appointment directly through our calendar.
                   </p>
                   <a
                     href={CALENDLY_URL}
