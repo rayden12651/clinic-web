@@ -193,7 +193,7 @@ export default function BookingForm() {
 
       {/* Notice */}
       <div className="md:col-span-2">
-        <p className="text-xs text-clinic-muted/70 leading-relaxed">
+        <p className="text-xs text-clinic-muted leading-relaxed">
           ✦ &nbsp;Appointment requests are reviewed by our team and confirmed within 24 hours.
           Your information is handled with strict confidentiality.
         </p>

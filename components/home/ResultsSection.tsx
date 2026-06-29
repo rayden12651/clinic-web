@@ -71,7 +71,7 @@ export default function ResultsSection() {
         </div>
 
         {/* Mobile disclaimer */}
-        <p className="lg:hidden mt-8 text-center text-[10px] text-clinic-muted/50 leading-relaxed italic px-2">
+        <p className="lg:hidden mt-8 text-center text-[10px] text-clinic-muted/75 leading-relaxed italic px-2">
           {disclaimer}
         </p>
 

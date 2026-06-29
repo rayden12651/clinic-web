@@ -53,7 +53,7 @@ export default function AppointmentCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, delay: 0.22 }}
-          className="text-[13px] lg:text-[14px] text-white/45 leading-[1.8] mb-11 max-w-md mx-auto"
+          className="text-[13px] lg:text-[14px] text-white/65 leading-[1.8] mb-11 max-w-md mx-auto"
         >
           Book a confidential consultation.
           <br className="hidden sm:block" />
@@ -79,7 +79,7 @@ export default function AppointmentCTA() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.18em] uppercase text-white/45 hover:text-white transition-colors duration-300 border-b border-white/20 hover:border-white pb-0.5"
+            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.18em] uppercase text-white/60 hover:text-white transition-colors duration-300 border-b border-white/30 hover:border-white pb-0.5"
           >
             <MessageCircle size={12} />
             WhatsApp Us
@@ -91,7 +91,7 @@ export default function AppointmentCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-10 text-[9px] text-white/22 tracking-[0.18em] uppercase"
+          className="mt-10 text-[9px] text-white/45 tracking-[0.18em] uppercase"
         >
           Appointments confirmed within 24 hours &nbsp;·&nbsp; Strictly confidential
         </motion.p>

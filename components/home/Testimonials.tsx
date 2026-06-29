@@ -97,7 +97,7 @@ export default function Testimonials() {
         </div>
 
         <ScrollReveal delay={0.3}>
-          <p className="hidden lg:block mt-12 text-center text-xs text-clinic-muted/50 tracking-wide">
+          <p className="hidden lg:block mt-12 text-center text-xs text-clinic-muted/70 tracking-wide">
             All reviews are from real patients. Names are anonymised to protect privacy.
           </p>
         </ScrollReveal>

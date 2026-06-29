@@ -227,7 +227,7 @@ export default function ServicesPage() {
               {steps.map((s, i) => (
                 <ScrollReveal key={i} delay={i * 0.1}>
                   <div className="bg-white border border-rose-light/50 rounded-2xl p-4 lg:p-7 text-center flex flex-col items-center gap-2 lg:gap-4">
-                    <span className="font-serif text-[1.875rem] lg:text-5xl text-rose-light font-light leading-none">{s.num}</span>
+                    <span className="font-serif text-[1.875rem] lg:text-5xl text-rose-mid font-light leading-none">{s.num}</span>
                     <h3 className="font-serif text-[0.9rem] lg:text-xl text-clinic-dark leading-tight">{s.title}</h3>
                     <p className="hidden lg:block text-sm text-clinic-muted leading-relaxed">{s.desc}</p>
                     <p className="lg:hidden text-[11px] text-clinic-muted leading-snug">{s.desc}</p>
