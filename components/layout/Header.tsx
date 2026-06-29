@@ -21,6 +21,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  // On the homepage with a dark video hero, use white text until the user scrolls
+  const darkHero = pathname === "/" && !scrolled && !menuOpen;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -50,7 +52,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex flex-col leading-none group">
-              <span className="font-serif text-[17px] sm:text-base lg:text-xl font-light tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-widest uppercase text-clinic-dark">
+              <span className={`font-serif text-[17px] sm:text-base lg:text-xl font-light tracking-[0.12em] sm:tracking-[0.2em] lg:tracking-widest uppercase transition-colors duration-300 ${darkHero ? "text-white lg:text-clinic-dark" : "text-clinic-dark"}`}>
                 {CLINIC_NAME}
               </span>
               <span className="divider-gold mt-0.5 group-hover:w-full transition-all duration-500" />
@@ -106,7 +108,7 @@ export default function Header() {
               </Link>
               <button
                 onClick={() => setMenuOpen((v) => !v)}
-                className="p-1.5 text-clinic-dark hover:text-rose-primary transition-colors"
+                className={`p-1.5 transition-colors ${darkHero ? "text-white lg:text-clinic-dark hover:text-rose-light lg:hover:text-rose-primary" : "text-clinic-dark hover:text-rose-primary"}`}
                 aria-label="Toggle menu"
               >
                 {menuOpen ? <X size={18} /> : <Menu size={18} />}

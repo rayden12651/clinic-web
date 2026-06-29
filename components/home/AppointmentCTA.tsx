@@ -10,72 +10,78 @@ const WHATSAPP_URL =
 
 export default function AppointmentCTA() {
   return (
-    <section className="py-14 lg:py-24 relative overflow-hidden bg-gradient-to-br from-rose-primary via-rose-deep to-[#8B3856]">
-      {/* Decorative circles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/5 border border-white/10" />
-        <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-white/5 border border-white/10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/3" />
-      </div>
+    <section className="py-24 lg:py-36 bg-clinic-dark relative overflow-hidden">
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 lg:px-6">
-        {/* Mobile: luxury invitation card wrapper — transparent/invisible on desktop */}
-        <div className="text-center bg-white/10 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none border border-white/20 lg:border-0 rounded-[2rem] lg:rounded-none px-5 py-8 lg:px-0 lg:py-0 shadow-xl shadow-black/10 lg:shadow-none">
+      {/* Subtle texture overlays */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(217,124,146,0.06),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_80%_20%,rgba(201,169,110,0.05),transparent)]" />
+
+      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
+
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-xs font-semibold tracking-[0.3em] uppercase text-rose-light/80 mb-4"
+          transition={{ duration: 0.6 }}
+          className="text-[9px] tracking-[0.42em] uppercase text-rose-primary/80 mb-7"
         >
           Begin Your Journey
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="h-px w-10 bg-rose-primary/30 mx-auto mb-9"
+        />
+
         <motion.h2
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.08 }}
-          className="font-serif font-light text-[1.875rem] sm:text-4xl lg:text-[3.5rem] text-white leading-tight"
+          transition={{ duration: 0.8, delay: 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="font-serif font-light text-[2.5rem] lg:text-[3.5rem] text-white leading-[0.97] tracking-[-0.02em] mb-7"
         >
-          Ready to Experience{" "}
-          <br className="hidden sm:block" />
-          Premium Care?
+          Ready to Experience
+          <br />Premium{" "}
+          <em className="not-italic text-rose-light">Care?</em>
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.65, delay: 0.18 }}
-          className="mt-4 lg:mt-5 text-[13px] lg:text-base text-white/70 leading-relaxed max-w-xl mx-auto"
+          transition={{ duration: 0.65, delay: 0.22 }}
+          className="text-[13px] lg:text-[14px] text-white/45 leading-[1.8] mb-11 max-w-md mx-auto"
         >
-          <span className="lg:hidden">Confidential. No pressure. Confirmed within 24 hours.</span>
-          <span className="hidden lg:inline">Book a confidential consultation today. Our team will guide you through the process with care, transparency, and no pressure.</span>
+          Book a confidential consultation.
+          <br className="hidden sm:block" />
+          Tailored, private, and designed entirely around you.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.65, delay: 0.28 }}
-          className="mt-5 lg:mt-10 grid grid-cols-1 gap-3 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-4"
+          transition={{ duration: 0.65, delay: 0.32 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
             href="/appointment"
-            className="group inline-flex items-center justify-center gap-2 w-full lg:w-auto px-8 py-3.5 lg:py-4 bg-white text-rose-deep text-[12px] lg:text-sm font-medium tracking-wider uppercase rounded-full hover:bg-rose-blush transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
+            className="group inline-flex items-center gap-2 px-9 py-3.5 bg-white text-clinic-dark text-[11px] font-medium tracking-[0.2em] uppercase rounded-full hover:bg-rose-blush transition-all duration-300"
           >
             Book Appointment
-            <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
 
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 w-full lg:w-auto px-8 py-3.5 lg:py-4 border border-white/30 text-white text-[12px] lg:text-sm font-medium tracking-wider uppercase rounded-full hover:bg-white/10 transition-all duration-300"
+            className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.18em] uppercase text-white/45 hover:text-white transition-colors duration-300 border-b border-white/20 hover:border-white pb-0.5"
           >
-            <MessageCircle size={14} />
+            <MessageCircle size={12} />
             WhatsApp Us
           </a>
         </motion.div>
@@ -84,12 +90,12 @@ export default function AppointmentCTA() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.45 }}
-          className="mt-8 text-xs text-white/40 tracking-wide"
+          transition={{ delay: 0.5 }}
+          className="mt-10 text-[9px] text-white/22 tracking-[0.18em] uppercase"
         >
-          Appointments confirmed within 24 hours · Strictly confidential
+          Appointments confirmed within 24 hours &nbsp;·&nbsp; Strictly confidential
         </motion.p>
-        </div>{/* end mobile card wrapper */}
+
       </div>
     </section>
   );

@@ -1,129 +1,120 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Leaf, Clock, Sun, Star, RefreshCcw } from "lucide-react";
-import SectionTitle from "@/components/ui/SectionTitle";
-import ServiceCard from "@/components/ui/ServiceCard";
 import ScrollReveal from "@/components/effects/ScrollReveal";
 
 const services = [
   {
-    icon: <Sparkles size={18} />,
+    icon: <Sparkles size={14} />,
     title: "Aesthetic Consultation",
-    mobileDesc: "One-on-one, no obligation — understanding your goals first.",
-    description:
-      "A thorough one-on-one consultation designed to understand your goals, skin health, and the treatments best suited to support your journey.",
+    desc: "One-on-one, understanding your goals first.",
   },
   {
-    icon: <Leaf size={18} />,
+    icon: <Leaf size={14} />,
     title: "Skin Health",
-    mobileDesc: "Personalised protocols for clarity, texture, and vitality.",
-    description:
-      "Personalised protocols designed to support skin clarity, texture, and vitality — adapted to your unique skin profile and lifestyle.",
+    desc: "Personalised protocols for clarity and vitality.",
   },
   {
-    icon: <Clock size={18} />,
+    icon: <Clock size={14} />,
     title: "Anti-Aging Care",
-    mobileDesc: "Non-invasive approaches for a naturally refreshed look.",
-    description:
-      "Thoughtfully selected, non-invasive approaches designed to support a refreshed, naturally youthful appearance over time.",
+    desc: "Non-invasive approaches for a naturally refreshed look.",
   },
   {
-    icon: <Sun size={18} />,
+    icon: <Sun size={14} />,
     title: "Facial Rejuvenation",
-    mobileDesc: "Restore luminosity and radiance with precision.",
-    description:
-      "Advanced, consultation-based facial treatments designed to restore luminosity, firmness, and radiance with precision and care.",
+    desc: "Restore luminosity and radiance with precision.",
   },
   {
-    icon: <Star size={18} />,
+    icon: <Star size={14} />,
     title: "Wellness Plans",
-    mobileDesc: "Holistic strategies combining medical insight and lifestyle.",
-    description:
-      "Holistic wellness strategies created exclusively for you — combining medical insight with lifestyle guidance for lasting results.",
+    desc: "Holistic strategies combining medical insight and lifestyle.",
   },
   {
-    icon: <RefreshCcw size={18} />,
+    icon: <RefreshCcw size={14} />,
     title: "Follow-Up Care",
-    mobileDesc: "Dedicated support to monitor your progress.",
-    description:
-      "Dedicated post-treatment support to monitor your progress, answer your questions, and refine your care plan as needed.",
+    desc: "Dedicated support to monitor and refine your progress.",
   },
 ];
 
 export default function ServicesPreview() {
   return (
-    <section className="py-12 lg:py-24 bg-rose-blush">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        <SectionTitle
-          eyebrow="Our Services"
-          title="Treatments Designed Around You"
-          subtitle="Each service at Dr. Pazit Clinic is consultation-based and personalised — never one-size-fits-all."
-          hideSubtitleMobile
-        />
+    <section className="py-20 lg:py-32 bg-white">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
 
-        {/* ── MOBILE: compact numbered swipe carousel ── */}
-        <div className="lg:hidden mt-6 flex overflow-x-auto gap-3 pb-3 -mx-5 px-5 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+        {/* Section header */}
+        <div className="flex items-end justify-between pb-8 lg:pb-12 border-b border-clinic-border">
+          <div>
+            <p className="text-[9px] tracking-[0.38em] uppercase text-rose-primary mb-3">Our Services</p>
+            <h2 className="font-serif font-light text-[1.875rem] lg:text-[3rem] text-clinic-dark leading-[1.0]">
+              Treatments Designed
+              <br /><em className="not-italic text-rose-primary">Around You</em>
+            </h2>
+          </div>
+          <Link
+            href="/services"
+            className="hidden lg:inline-flex items-center gap-1.5 text-[10px] font-medium tracking-[0.22em] uppercase text-clinic-muted hover:text-rose-primary transition-colors duration-300 pb-0.5 border-b border-transparent hover:border-rose-primary shrink-0 mb-1"
+          >
+            All Treatments
+            <ArrowRight size={10} />
+          </Link>
+        </div>
+
+        {/* Editorial numbered list */}
+        <div className="divide-y divide-clinic-border">
           {services.map((svc, i) => (
-            <div
-              key={i}
-              className="snap-start shrink-0 w-[78%] min-w-[240px] bg-white rounded-[1.5rem] border border-rose-light/50 p-5 flex flex-col shadow-sm shadow-rose-primary/5"
-            >
-              {/* Number + icon row */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-rose-primary/50">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="w-9 h-9 rounded-full bg-rose-blush flex items-center justify-center text-rose-primary">
-                  {svc.icon}
-                </div>
-              </div>
-              {/* Title */}
-              <h3 className="font-serif text-[1.1rem] text-clinic-dark leading-tight mb-2">
-                {svc.title}
-              </h3>
-              {/* Short desc */}
-              <p className="text-[12px] text-clinic-muted leading-relaxed flex-1">
-                {svc.mobileDesc}
-              </p>
-              {/* Link */}
+            <ScrollReveal key={i} delay={i * 0.06}>
               <Link
                 href="/services"
-                className="mt-4 pt-3 border-t border-rose-blush flex items-center justify-between text-[11px] font-semibold text-rose-primary uppercase tracking-wider"
+                className="group flex items-center gap-5 lg:gap-8 py-5 lg:py-6 hover:pl-1.5 transition-all duration-300"
               >
-                Learn More
-                <ArrowRight size={12} />
+                {/* Number */}
+                <span className="text-[10px] font-medium tracking-[0.2em] text-rose-primary/40 w-5 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                {/* Icon */}
+                <span className="text-rose-primary/50 shrink-0 group-hover:text-rose-primary transition-colors duration-300">
+                  {svc.icon}
+                </span>
+
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                  <p className="font-serif text-[1.05rem] lg:text-[1.2rem] text-clinic-dark group-hover:text-rose-primary transition-colors duration-300 leading-snug">
+                    {svc.title}
+                  </p>
+                  <p className="text-[11px] lg:text-[12px] text-clinic-muted mt-0.5 leading-relaxed">
+                    {svc.desc}
+                  </p>
+                </div>
+
+                {/* Arrow */}
+                <ArrowRight
+                  size={13}
+                  className="text-clinic-border group-hover:text-rose-primary transition-all duration-300 group-hover:translate-x-0.5 shrink-0"
+                />
               </Link>
-            </div>
-          ))}
-          {/* Trailing spacer */}
-          <div className="shrink-0 w-2" aria-hidden />
-        </div>
-
-        {/* ── DESKTOP: three-column grid (unchanged) ── */}
-        <div className="hidden lg:grid mt-16 grid-cols-3 gap-6">
-          {services.map((svc, i) => (
-            <ServiceCard
-              key={i}
-              icon={svc.icon}
-              title={svc.title}
-              description={svc.description}
-              delay={i * 0.08}
-            />
+            </ScrollReveal>
           ))}
         </div>
 
-        {/* CTA link — centered on both */}
-        <ScrollReveal delay={0.3}>
-          <div className="mt-8 lg:mt-12 text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-rose-primary text-rose-primary text-[12px] lg:text-sm font-medium tracking-wider uppercase rounded-full hover:bg-rose-primary hover:text-white transition-all duration-300"
-            >
-              View All Services
-            </Link>
-          </div>
-        </ScrollReveal>
+        {/* Mobile CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-8 lg:hidden text-center"
+        >
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 px-7 py-3 border border-clinic-border text-clinic-body text-[11px] font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300"
+          >
+            View All Services
+          </Link>
+        </motion.div>
+
       </div>
     </section>
   );

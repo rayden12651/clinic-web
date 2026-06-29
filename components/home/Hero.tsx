@@ -1,315 +1,210 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const stats = [
   { value: "500+", label: "Patients" },
-  { value: "10+", label: "Years" },
-  { value: "98%", label: "Satisfaction" },
-  { value: "20+", label: "Treatments" },
+  { value: "10+",  label: "Years" },
+  { value: "98%",  label: "Rated" },
 ];
 
 export default function Hero() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springCfg = { damping: 35, stiffness: 100 };
-  const floatX = useSpring(useTransform(mouseX, [-600, 600], [-18, 18]), springCfg);
-  const floatY = useSpring(useTransform(mouseY, [-400, 400], [-12, 12]), springCfg);
-  const floatXSlow = useSpring(useTransform(mouseX, [-600, 600], [-8, 8]), springCfg);
-  const floatYSlow = useSpring(useTransform(mouseY, [-400, 400], [-5, 5]), springCfg);
-
-  useEffect(() => {
-    if (window.matchMedia("(hover: none)").matches) return;
-    const onMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX - window.innerWidth / 2);
-      mouseY.set(e.clientY - window.innerHeight / 2);
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, [mouseX, mouseY]);
-
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-rose-blush via-white to-gold-pale lg:min-h-screen lg:flex lg:flex-col">
+    <section className="relative overflow-hidden">
 
-      {/* Background blobs — shared */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          style={{ x: floatXSlow, y: floatYSlow }}
-          className="absolute -top-32 -right-32 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] rounded-full bg-rose-light/40 blur-3xl"
-        />
-        <motion.div
-          style={{ x: floatX, y: floatY }}
-          className="absolute bottom-0 -left-32 w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] rounded-full bg-gold-pale/60 blur-3xl"
-        />
-      </div>
+      {/* ════════════════════════════════════════════════════════════
+          MOBILE HERO — full-bleed dark video, text overlay at bottom
+      ════════════════════════════════════════════════════════════ */}
+      <div className="lg:hidden relative min-h-[100svh] flex flex-col">
 
-      {/* ══════════════════════════════════════════════════════════
-          MOBILE HERO — editorial luxury layout (lg:hidden)
-          Layout: short text → full image → subtitle + buttons
-      ══════════════════════════════════════════════════════════ */}
-      <div className="lg:hidden relative z-10">
+        {/* Video / Placeholder background */}
+        <div className="absolute inset-0">
+          {/* Luxury dark placeholder — visible when no video is loaded */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f0d] via-[#2d1a17] to-[#3d2a25]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(217,124,146,0.14),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_20%_80%,rgba(201,169,110,0.08),transparent)]" />
+          {/* Replace this with the clinic hero video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            {/* <source src="/videos/hero.mp4" type="video/mp4" /> */}
+          </video>
+        </div>
 
-        {/* Minimal centered text — eyebrow + headline + thin accent */}
-        <div className="pt-[80px] pb-3 px-5 text-center">
-          {/* Subtle specialty label — understated, not declarative */}
+        {/* Bottom-to-top gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 pointer-events-none" />
+
+        {/* Placeholder indicator — remove once real video is added */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 text-white/20 pointer-events-none">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75">
+            <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.845v6.31a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/>
+          </svg>
+          <p className="text-[8px] tracking-[0.3em] uppercase">Add video: /videos/hero.mp4</p>
+        </div>
+
+        {/* Content pinned to bottom */}
+        <div className="relative z-10 mt-auto px-6 pb-12 pt-28">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="text-[9px] font-medium tracking-[0.35em] uppercase text-rose-primary/60 mb-4"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[9px] tracking-[0.42em] uppercase text-rose-primary/90 mb-5"
           >
             Aesthetic &nbsp;·&nbsp; Medicine
           </motion.p>
 
-          {/* Centered serif headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.16, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-serif font-light text-[38px] leading-[1.0] tracking-[-0.02em] text-clinic-dark"
+            transition={{ duration: 0.9, delay: 0.32, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-serif font-light text-[2.75rem] leading-[0.95] tracking-[-0.02em] text-white mb-8"
           >
             Premium{" "}
-            <em className="not-italic text-rose-primary">Care,</em>
-            <br />Personal Touch
+            <em className="not-italic text-rose-light">Care,</em>
+            <br />Personal Touch.
           </motion.h1>
 
-          {/* Thin accent line — visual bridge into image */}
           <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-5 h-px w-8 bg-rose-primary/35 mx-auto"
-          />
-        </div>
-
-        {/* Hero image — full width, close to title, forms the visual centrepiece */}
-        {/* REPLACE: swap inner div for <Image src="/images/hero.jpg" fill alt="Dr. Pazit Clinic" className="object-cover" /> */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.26 }}
-          className="px-4"
-        >
-          <div className="relative w-full h-[340px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light via-rose-mid/60 to-rose-primary/25">
-            {/* Placeholder centre — remove when real image added */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-rose-primary/35">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                <circle cx="12" cy="13" r="4"/>
-              </svg>
-              <p className="text-[9px] tracking-widest uppercase text-center px-8">Replace with clinic photo</p>
-            </div>
-            {/* Subtle bottom gradient for badge readability */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-rose-primary/18 to-transparent pointer-events-none" />
-            {/* Inset border — luxury editorial feel */}
-            <div className="absolute inset-2 rounded-[1.65rem] border border-white/22 pointer-events-none" />
-            {/* Single floating trust badge */}
-            <div className="absolute bottom-4 left-4 bg-white/93 backdrop-blur-sm rounded-2xl px-3.5 py-2.5 border border-white/70 shadow-lg shadow-rose-primary/8">
-              <p className="font-serif text-xl text-rose-primary font-medium leading-none">500+</p>
-              <p className="text-[9px] text-clinic-muted mt-0.5 uppercase tracking-wide">Happy Patients</p>
-            </div>
-            {/* Satisfaction accent — top right */}
-            <div className="absolute top-4 right-4 bg-white/85 backdrop-blur-sm rounded-xl px-3 py-2 border border-white/60 shadow-md flex items-center gap-1.5">
-              <span className="text-[#C9A96E] text-sm leading-none">★</span>
-              <div>
-                <p className="font-serif text-[15px] text-rose-primary font-medium leading-none">98%</p>
-                <p className="text-[8px] text-clinic-muted mt-0.5 uppercase tracking-wide">Rated</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Subtitle + compact buttons — below image, centered */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="px-5 pt-5 pb-6 text-center"
-        >
-          <p className="text-[12px] text-clinic-muted leading-[1.7] mb-5">
-            Tailored aesthetic care, designed around you.
-          </p>
-          <div className="flex items-center justify-center gap-2.5 mb-3">
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
             <Link
               href="/appointment"
-              className="group inline-flex items-center gap-1.5 px-5 py-2.5 bg-rose-primary text-white text-[11px] font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25 whitespace-nowrap"
+              className="group inline-flex items-center gap-2 px-7 py-3 bg-white text-clinic-dark text-[11px] font-medium tracking-[0.18em] uppercase rounded-full hover:bg-rose-blush transition-all duration-300"
             >
-              Book Now
+              Book Consultation
               <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.85 }}
+            className="mt-6 text-[9px] text-white/35 tracking-[0.16em] uppercase"
+          >
+            Consultation-based &nbsp;·&nbsp; Strictly confidential
+          </motion.p>
+        </div>
+      </div>
+
+      {/* ════════════════════════════════════════════════════════════
+          DESKTOP HERO — white text panel (left) + video (right)
+      ════════════════════════════════════════════════════════════ */}
+      <div className="hidden lg:flex min-h-screen">
+
+        {/* Left: white text panel */}
+        <div className="w-[42%] xl:w-[38%] flex flex-col justify-center px-14 xl:px-20 py-28 bg-white border-r border-clinic-border relative z-10">
+
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex items-center gap-3 mb-10"
+          >
+            <div className="h-px w-8 bg-rose-primary" />
+            <span className="text-[10px] font-medium tracking-[0.32em] uppercase text-rose-primary">
+              Aesthetic Medicine
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-serif font-light text-[52px] xl:text-[64px] leading-[0.92] tracking-[-0.025em] text-clinic-dark mb-8"
+          >
+            Premium<br />Medical{" "}
+            <em className="not-italic text-rose-primary">Care</em>
+            <br />With a<br />Personal Touch
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.34 }}
+            className="text-[13px] xl:text-sm text-clinic-muted leading-[1.8] max-w-[280px] mb-10"
+          >
+            Where advanced aesthetic care meets the art of living well. Every treatment thoughtfully tailored to you.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.46 }}
+            className="flex items-center gap-6 mb-14"
+          >
+            <Link
+              href="/appointment"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-rose-primary text-white text-[11px] font-medium tracking-[0.2em] uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25"
+            >
+              Book Consultation
+              <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center px-5 py-2.5 border border-clinic-border text-clinic-body text-[11px] font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300 whitespace-nowrap"
+              className="text-[11px] font-medium tracking-[0.18em] uppercase text-clinic-muted hover:text-clinic-dark transition-colors duration-300 border-b border-clinic-muted/30 hover:border-clinic-dark pb-0.5"
             >
-              Services
+              Our Services
             </Link>
-          </div>
-          <p className="text-[9px] text-clinic-muted/45 tracking-[0.12em] uppercase">
-            Consultation-based &nbsp;·&nbsp; Strictly confidential
-          </p>
-        </motion.div>
-      </div>
+          </motion.div>
 
-      {/* ══════════════════════════════════════════════════════════
-          DESKTOP HERO — original layout (hidden on mobile)
-      ══════════════════════════════════════════════════════════ */}
-      <div className="hidden lg:flex lg:flex-1 lg:items-center relative z-10">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full lg:pt-28 lg:pb-16">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-            {/* Left: Text */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex items-center gap-2 mb-5"
-              >
-                <div className="h-px w-10 bg-rose-primary" />
-                <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-rose-primary">
-                  Luxury Medical Care
-                </span>
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.18, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="font-serif font-light text-[64px] lg:text-[72px] xl:text-[80px] leading-[0.95] tracking-[-0.02em] text-clinic-dark"
-              >
-                Premium Medical{" "}
-                <em className="not-italic text-rose-primary">Care</em>
-                <br />
-                With a Personal Touch
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.32 }}
-                className="mt-6 text-base leading-[1.65] text-clinic-muted max-w-md"
-              >
-                Where advanced aesthetic care meets the art of living well.
-                Every treatment is thoughtfully tailored to your health,
-                confidence, and natural beauty.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.44 }}
-                className="mt-8 flex flex-row items-center gap-3"
-              >
-                <Link
-                  href="/appointment"
-                  className="group inline-flex items-center gap-1.5 px-7 py-3.5 bg-rose-primary text-white text-[13px] font-medium tracking-wider uppercase rounded-full hover:bg-rose-deep transition-all duration-300 hover:shadow-lg hover:shadow-rose-primary/25 hover:-translate-y-0.5 whitespace-nowrap"
-                >
-                  Book Now
-                  <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center px-7 py-3.5 border border-clinic-border text-clinic-body text-[13px] font-medium tracking-wider uppercase rounded-full hover:border-rose-primary hover:text-rose-primary transition-all duration-300 whitespace-nowrap"
-                >
-                  Our Services
-                </Link>
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
-                className="mt-6 text-[10px] text-clinic-muted/60 tracking-wide"
-              >
-                ✦&nbsp; Consultation-based &nbsp;·&nbsp; Strictly confidential
-              </motion.p>
-            </div>
-
-            {/* Right: Desktop image with mouse parallax + floating badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.25 }}
-              className="flex justify-start"
-            >
-              <motion.div
-                style={{ x: floatX, y: floatY }}
-                className="flex items-center justify-center relative"
-              >
-                {/* REPLACE: swap this div for <Image src="/your-photo.jpg" ... /> */}
-                <div className="relative w-[460px] h-[580px] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-rose-primary/15 bg-gradient-to-br from-rose-light via-rose-mid/50 to-rose-primary/25 flex flex-col items-center justify-center gap-4">
-                  <div className="text-rose-primary/40">
-                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                      <circle cx="12" cy="13" r="4"/>
-                    </svg>
-                  </div>
-                  <p className="text-rose-primary/50 text-xs tracking-widest uppercase text-center px-10">
-                    Replace with doctor or clinic photo
-                    <br />(460 × 580 px)
-                  </p>
-                  <div className="absolute inset-3 rounded-[2rem] border border-white/40 pointer-events-none" />
-                </div>
-
-                {/* Floating badge top-left */}
-                <motion.div
-                  animate={{ y: [0, -7, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -left-8 top-16 bg-white shadow-xl shadow-clinic-dark/8 rounded-2xl px-5 py-4 border border-clinic-border"
-                >
-                  <p className="text-[10px] text-clinic-muted uppercase tracking-widest mb-0.5">Trusted by</p>
-                  <p className="font-serif text-2xl text-clinic-dark font-medium leading-none">500+</p>
-                  <p className="text-[10px] text-clinic-muted mt-0.5">Patients</p>
-                </motion.div>
-
-                {/* Floating badge bottom-right */}
-                <motion.div
-                  animate={{ y: [0, 7, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                  className="absolute -right-6 bottom-20 bg-white shadow-xl shadow-clinic-dark/8 rounded-2xl px-5 py-4 border border-clinic-border"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gold-pale flex items-center justify-center">
-                      <span className="text-gold text-sm">★</span>
-                    </div>
-                    <div>
-                      <p className="font-serif text-lg text-clinic-dark font-medium leading-none">98%</p>
-                      <p className="text-[10px] text-clinic-muted mt-0.5 uppercase tracking-wider">Satisfaction</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Decorative rings */}
-                <div className="absolute -right-10 -top-10 w-32 h-32 rounded-full border border-rose-mid/30" />
-                <div className="absolute -right-5 -top-5 w-20 h-20 rounded-full border border-rose-mid/20" />
-              </motion.div>
-            </motion.div>
-
-          </div>
-        </div>
-      </div>
-
-      {/* Stats bar — shown on both mobile and desktop */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-        className="relative z-10 bg-white/80 backdrop-blur-md border-t border-clinic-border"
-      >
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-4 divide-x divide-clinic-border">
+          {/* Stat row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.65 }}
+            className="flex items-center gap-8 pt-8 border-t border-clinic-border"
+          >
             {stats.map((stat, i) => (
-              <div key={i} className="py-3 sm:py-5 px-2 sm:px-5 text-center">
-                <p className="font-serif text-[18px] sm:text-2xl md:text-3xl text-clinic-dark font-medium leading-none">{stat.value}</p>
-                <p className="text-[9px] sm:text-xs text-clinic-muted mt-1 tracking-wide uppercase">{stat.label}</p>
+              <div key={i}>
+                <p className="font-serif text-2xl text-clinic-dark font-light leading-none">{stat.value}</p>
+                <p className="text-[9px] uppercase tracking-widest text-clinic-muted mt-1.5">{stat.label}</p>
               </div>
             ))}
+          </motion.div>
+        </div>
+
+        {/* Right: video panel */}
+        <div className="flex-1 relative overflow-hidden">
+          {/* Warm rose placeholder background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-rose-light via-rose-mid/70 to-rose-deep/40" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_30%_30%,rgba(255,255,255,0.18),transparent)]" />
+
+          {/* Placeholder indicator */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/40 pointer-events-none">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75">
+              <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.845v6.31a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/>
+            </svg>
+            <p className="text-[10px] tracking-[0.28em] uppercase">Replace with clinic video</p>
+            <p className="text-[9px] opacity-60">/public/videos/hero.mp4</p>
+          </div>
+
+          {/* Replace this with the clinic hero video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            {/* <source src="/videos/hero.mp4" type="video/mp4" /> */}
+          </video>
+
+          {/* Subtle watermark bottom-right */}
+          <div className="absolute bottom-8 right-10 text-right pointer-events-none">
+            <p className="text-white/30 text-[9px] tracking-[0.3em] uppercase font-light">Dr. Pazit Clinic</p>
           </div>
         </div>
-      </motion.div>
+
+      </div>
     </section>
   );
 }
