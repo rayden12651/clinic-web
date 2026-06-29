@@ -28,7 +28,7 @@ export default function Hero() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            {/* <source src="/videos/hero.mp4" type="video/mp4" /> */}
+            <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -171,7 +171,6 @@ export default function Hero() {
             <p className="text-[9px] opacity-60">/public/videos/hero.mp4</p>
           </div>
 
-          {/* Replace this with the clinic hero video */}
           <video
             autoPlay
             muted
@@ -179,7 +178,7 @@ export default function Hero() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            {/* <source src="/videos/hero.mp4" type="video/mp4" /> */}
+            <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
 
           {/* Subtle watermark bottom-right */}
