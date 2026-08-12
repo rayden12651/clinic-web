@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/effects/ScrollReveal";
@@ -47,6 +48,28 @@ export default function ResultsSection() {
           subtitle="Every journey is different. Here is a glimpse at the kind of transformations our personalised programmes are designed to support."
           hideSubtitleMobile
         />
+
+        {/* ── MOBILE: swipeable image strip ── */}
+        <div className="lg:hidden mt-8 flex overflow-x-auto gap-3 -mx-5 px-5 pb-2 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+          {results.map((r, i) => (
+            <div key={i} className="snap-start shrink-0 w-[52vw] aspect-[3/4] relative rounded-2xl overflow-hidden shadow-lg shadow-rose-primary/10">
+              {r.src && (
+                <Image
+                  src={r.src}
+                  alt={r.label}
+                  fill
+                  className="object-cover"
+                  sizes="52vw"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+              <div className="absolute bottom-0 inset-x-0 p-3">
+                <p className="text-white text-[9px] font-medium tracking-[0.2em] uppercase leading-tight">{r.label}</p>
+              </div>
+            </div>
+          ))}
+          <div className="shrink-0 w-1" aria-hidden />
+        </div>
 
         {/* ── MOBILE: clean editorial stat grid ── */}
         <div className="lg:hidden mt-10 grid grid-cols-2 gap-x-6 gap-y-9">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Leaf, Clock, Sun, Star, RefreshCcw } from "lucide-react";
 import ScrollReveal from "@/components/effects/ScrollReveal";
@@ -59,6 +60,21 @@ export default function ServicesPreview() {
             All Treatments
             <ArrowRight size={10} />
           </Link>
+        </div>
+
+        {/* Mobile editorial image — clinic interior */}
+        <div className="lg:hidden mt-6 mb-2 relative h-44 rounded-2xl overflow-hidden shadow-md shadow-rose-primary/8">
+          <Image
+            src="/images/clinic-interior.png"
+            alt="Dr. Pazit Clinic — Treatment Space"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-clinic-dark/40 to-transparent" />
+          <div className="absolute bottom-4 left-4">
+            <p className="text-white/90 text-[9px] font-medium tracking-[0.28em] uppercase">Private Clinic · Dubai</p>
+          </div>
         </div>
 
         {/* Editorial numbered list */}
