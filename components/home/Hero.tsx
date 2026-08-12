@@ -12,23 +12,28 @@ export default function Hero() {
   useEffect(() => {
     const videos = [mobileVideoRef.current, desktopVideoRef.current].filter(Boolean) as HTMLVideoElement[];
 
-    const tryPlay = (v: HTMLVideoElement) => {
-      v.muted = true; // set programmatically — required on iOS
+    const forcePlay = (v: HTMLVideoElement) => {
+      v.muted = true; // must set JS property — React's muted attribute has a known hydration bug
       v.play().catch(() => {});
     };
 
-    videos.forEach(tryPlay);
+    // Attempt 1: immediate
+    videos.forEach(forcePlay);
 
-    // iOS fallback: retry on first user touch if still paused
-    const onTouch = () => videos.forEach(v => { if (v.paused) tryPlay(v); });
+    // Attempt 2: after a short delay (handles hydration timing)
+    const t1 = setTimeout(() => videos.forEach(forcePlay), 200);
+
+    // Attempt 3: on canplay — browser has buffered enough
+    videos.forEach(v => v.addEventListener("canplay", () => forcePlay(v), { once: true }));
+
+    // Attempt 4: on first touch — absolute iOS fallback
+    const onTouch = () => videos.forEach(v => { if (v.paused) forcePlay(v); });
     document.addEventListener("touchstart", onTouch, { once: true, passive: true });
 
-    // Also retry when video has enough data to play
-    videos.forEach(v => {
-      v.addEventListener("canplay", () => { if (v.paused) tryPlay(v); }, { once: true });
-    });
-
-    return () => document.removeEventListener("touchstart", onTouch);
+    return () => {
+      clearTimeout(t1);
+      document.removeEventListener("touchstart", onTouch);
+    };
   }, []);
 
   return (
@@ -52,10 +57,9 @@ export default function Hero() {
             loop
             playsInline
             preload="auto"
+            src="/videos/hero.mp4"
             className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-          </video>
+          />
         </div>
 
         {/* Bottom-to-top gradient for text readability */}
@@ -187,10 +191,9 @@ export default function Hero() {
             loop
             playsInline
             preload="auto"
+            src="/videos/hero.mp4"
             className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-          </video>
+          />
 
           {/* Subtle watermark bottom-right */}
           <div className="absolute bottom-8 right-10 text-right pointer-events-none">
