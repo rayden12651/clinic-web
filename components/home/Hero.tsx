@@ -10,8 +10,25 @@ export default function Hero() {
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    mobileVideoRef.current?.play().catch(() => {});
-    desktopVideoRef.current?.play().catch(() => {});
+    const videos = [mobileVideoRef.current, desktopVideoRef.current].filter(Boolean) as HTMLVideoElement[];
+
+    const tryPlay = (v: HTMLVideoElement) => {
+      v.muted = true; // set programmatically — required on iOS
+      v.play().catch(() => {});
+    };
+
+    videos.forEach(tryPlay);
+
+    // iOS fallback: retry on first user touch if still paused
+    const onTouch = () => videos.forEach(v => { if (v.paused) tryPlay(v); });
+    document.addEventListener("touchstart", onTouch, { once: true, passive: true });
+
+    // Also retry when video has enough data to play
+    videos.forEach(v => {
+      v.addEventListener("canplay", () => { if (v.paused) tryPlay(v); }, { once: true });
+    });
+
+    return () => document.removeEventListener("touchstart", onTouch);
   }, []);
 
   return (
@@ -34,6 +51,7 @@ export default function Hero() {
             muted
             loop
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
@@ -168,6 +186,7 @@ export default function Hero() {
             muted
             loop
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
