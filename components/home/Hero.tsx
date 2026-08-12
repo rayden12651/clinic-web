@@ -1,11 +1,19 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-
 export default function Hero() {
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    mobileVideoRef.current?.play().catch(() => {});
+    desktopVideoRef.current?.play().catch(() => {});
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
 
@@ -20,8 +28,8 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f0d] via-[#2d1a17] to-[#3d2a25]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(217,124,146,0.14),transparent)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_20%_80%,rgba(201,169,110,0.08),transparent)]" />
-          {/* Replace this with the clinic hero video */}
           <video
+            ref={mobileVideoRef}
             autoPlay
             muted
             loop
@@ -155,6 +163,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_30%_30%,rgba(255,255,255,0.18),transparent)]" />
 
           <video
+            ref={desktopVideoRef}
             autoPlay
             muted
             loop
