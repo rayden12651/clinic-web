@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Award, Shield, Heart } from "lucide-react";
 import ScrollReveal from "@/components/effects/ScrollReveal";
@@ -34,10 +35,14 @@ export default function AboutPreview() {
         {/* Image — padded, with stat badge */}
         <ScrollReveal>
           <div className="relative mx-4">
-            {/* REPLACE: Replace with <Image> of the doctor or clinic interior */}
-            <div className="w-full h-[360px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 bg-gradient-to-br from-rose-light to-rose-mid relative">
-              {/* Inset border */}
-              <div className="absolute inset-3 rounded-[1.6rem] border border-white/30 pointer-events-none" />
+            <div className="w-full h-[360px] rounded-[2rem] overflow-hidden shadow-xl shadow-rose-primary/12 relative">
+              <Image
+                src="/images/doctor-portrait.png"
+                alt="Dr. Pazit — Aesthetic Medicine Specialist"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw"
+              />
               {/* Stat badge */}
               <div className="absolute bottom-4 right-4 bg-white/93 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/70 shadow-lg shadow-rose-primary/10">
                 <p className="font-serif text-2xl text-rose-primary font-medium leading-none">10+</p>
@@ -92,8 +97,15 @@ export default function AboutPreview() {
           {/* Left — Image */}
           <ScrollReveal direction="left">
             <div className="relative">
-              {/* REPLACE: Replace with <Image> of the doctor or clinic interior */}
-              <div className="w-full aspect-[3/4] max-w-sm mx-auto rounded-[2.5rem] overflow-hidden shadow-xl shadow-rose-primary/10 bg-gradient-to-br from-rose-light to-rose-mid" />
+              <div className="w-full aspect-[3/4] max-w-sm mx-auto rounded-[2.5rem] overflow-hidden shadow-xl shadow-rose-primary/10 relative">
+                <Image
+                  src="/images/doctor-portrait.png"
+                  alt="Dr. Pazit — Aesthetic Medicine Specialist"
+                  fill
+                  className="object-cover object-top"
+                  sizes="384px"
+                />
+              </div>
 
               {/* Floating accent card */}
               <motion.div

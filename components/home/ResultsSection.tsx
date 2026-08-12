@@ -5,24 +5,23 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/effects/ScrollReveal";
 import MediaBlock from "@/components/ui/MediaBlock";
 
-/* ── REPLACE: Add your actual before/after or treatment result images/videos ── */
 const results = [
   {
     label: "Skin Health Journey",
     type: "image" as const,
-    src: undefined,
+    src: "/images/result-skin-health.png",
     caption: "12-week personalised skin health programme",
   },
   {
     label: "Facial Rejuvenation",
     type: "image" as const,
-    src: undefined,
+    src: "/images/result-facial-rejuvenation.png",
     caption: "Non-invasive facial rejuvenation treatment series",
   },
   {
     label: "Wellness & Glow",
     type: "image" as const,
-    src: undefined,
+    src: "/images/result-wellness-glow.png",
     caption: "Holistic wellness programme — 8-week plan",
   },
 ];

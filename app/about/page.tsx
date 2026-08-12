@@ -35,7 +35,11 @@ const credentials = [
   "Advanced Training — Non-invasive Facial Rejuvenation",
 ];
 
-const gallery = ["Clinic Reception", "Treatment Suite", "Consultation Room"];
+const gallery = [
+  { label: "Clinic Reception",   src: "/images/clinic-interior.png" },
+  { label: "Treatment Suite",    src: "/images/clinic-treatment-suite.png" },
+  { label: "Consultation Room",  src: "/images/clinic-consultation-room.png" },
+];
 
 const trustChips = ["Private Consultations", "Personalised Care", "Advanced Clinic"];
 
@@ -72,8 +76,9 @@ export default function AboutPage() {
             <ScrollReveal>
               {/* Image card */}
               <div className="px-4">
-                {/* REPLACE: Add <Image> of Dr. Pazit here */}
                 <MediaBlock
+                  src="/images/doctor-portrait.png"
+                  alt="Dr. Pazit Khalil — Aesthetic Medicine Specialist"
                   label="Dr. Pazit Khalil"
                   aspectRatio="landscape"
                   rounded="2xl"
@@ -111,8 +116,9 @@ export default function AboutPage() {
           <div className="hidden lg:block py-24 max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal direction="left">
-                {/* REPLACE: Add <Image> of Dr. Pazit here */}
                 <MediaBlock
+                  src="/images/doctor-portrait.png"
+                  alt="Dr. Pazit Khalil — Principal Physician"
                   label="Dr. Pazit Khalil — Principal Physician"
                   aspectRatio="portrait"
                   rounded="2xl"
@@ -216,12 +222,13 @@ export default function AboutPage() {
               <h2 className="font-serif font-light text-[1.625rem] lg:text-4xl text-clinic-dark text-center mb-6 lg:mb-10">Our Space</h2>
             </ScrollReveal>
 
-            {/* REPLACE: Replace MediaBlock placeholders with real clinic images */}
             <div className="grid grid-cols-3 gap-3 lg:gap-5">
-              {gallery.map((label, i) => (
+              {gallery.map((item, i) => (
                 <ScrollReveal key={i} delay={i * 0.08}>
                   <MediaBlock
-                    label={label}
+                    src={item.src}
+                    alt={item.label}
+                    label={item.label}
                     aspectRatio={i === 0 ? "portrait" : "square"}
                     rounded="xl"
                   />
